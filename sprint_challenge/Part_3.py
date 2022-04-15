@@ -7,5 +7,5 @@ docker container에 저장된 환경변수 ANSWER 을 찾아서 입력하세요
 """
 
 def env_of_sc33():
-    answer = ""
+    answer = "hello_AI"
     return answer

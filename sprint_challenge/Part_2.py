@@ -5,17 +5,17 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 DB_FILEPATH = os.path.join(os.path.dirname(__file__), 'fruit.db')
 
-
+@app.route('/')
 def get_hello():
     """
     /product 로 접속할 수 있도록 함수를 수정하세요.
     화면에 'This is Product' 를 출력합니다.
     """
 
-    answer_1 = ''
+    answer_1 = 'This is Product'
     return answer_1
 
-
+@app.route('/all')
 def get_fruits():
     """
     /all 로 접속할 수 있도록 함수를 수정하세요.
@@ -25,11 +25,19 @@ def get_fruits():
     - jsonify 로 결과를 반환합니다.
     """
     import sqlite3
-    pass
-    answer_2 = ''
+
+    fruit = sqlite3.connect("fruit.db")
+    
+    cur = fruit.cursor()
+
+    cur.execute("SELECT * FROM Part2_table, ORDER BY name")
+
+    rows = cur.fetchall()
+
+    answer_2 = rows
 
     return jsonify(answer_2)
 
-# 아래 주석을 풀고, 웹 애플리케이션을 실행해 보세요.
-# if __name__ == "__main__":
-#     app.run(debug=True)
+
+    if __name__ == "__main__":
+        app.run(debug=True)

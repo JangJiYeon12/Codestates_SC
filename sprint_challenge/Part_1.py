@@ -10,6 +10,12 @@ def json_to_pickle(path):
     - ./sprint_challenge/sample3.json
     """
 
-    answer_pickle = None
-    
+    dict = json.loads(path)
+
+    with open('filename.pickle', 'wb') as handle:
+        pickle.dump(dict, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+    with open('filename.pickle', 'rb') as handle:
+        answer_pickle = pickle.load(handle)
+
     return answer_pickle
