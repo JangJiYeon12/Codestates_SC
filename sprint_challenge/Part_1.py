@@ -10,13 +10,28 @@ class counter:
 
 @counter
 def addNumber(num) :
-    pass
+    if num < 1:
+        return 0
+    else:
+        return num + addNumber(num-1)
 
 
 @counter
 def countDown(num, li) :
-    pass
+    if num < 1:
+        li.append('발사!!')
+    else:
+        li.append(num)
+        countDown(num-1, li)
+
+    return li
 
 @counter
 def printStar(num, li) :
-    pass
+    if num < 1:
+        return
+    else:
+        li.append('*'*num)
+        printStar(num-1, li)
+
+    return list(reversed(li))
