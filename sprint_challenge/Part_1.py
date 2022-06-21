@@ -5,6 +5,14 @@
 import hashlib
 
 def sha_hash_function():
-  h = # hashlib 모듈관련 메소드 
-  pass
+  h = hashlib.sha256()
+  a = 'Test Name'
+  retult = []
+
+  h.update(a.encode('utf-8'))
+
+  result = h.hexdigest().split(' ')
+
+  return result
+
 
