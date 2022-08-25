@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="utf-8" />
-<title>Part1_2</title>
+<title>Part3</title>
 
 <style type="text/css">
     /*!
@@ -13137,7 +13137,7 @@ span.nbgrader-label {
   <div class="container">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h4>Part1_2 (Score: 0.5 / 7.0)</h4>
+        <h4>Part3 (Score: 1.0 / 3.0)</h4>
         <div id="toc">
           <ol>
           
@@ -13160,19 +13160,7 @@ span.nbgrader-label {
             
           
             
-            
-          
-            
-            
-          
-            
-            
-          
-            
-            
-          
-            
-            <li><a href="#1-1_test">Test cell</a> (Score: 0.5 / 0.5)</li>
+            <li><a href="#3-1_test">Test cell</a> (Score: 0.0 / 1.0)</li>
             
             
           
@@ -13183,7 +13171,7 @@ span.nbgrader-label {
             
           
             
-            <li><a href="#1-2_test">Test cell</a> (Score: 0.0 / 0.5)</li>
+            <li><a href="#3-2_test">Test cell</a> (Score: 0.0 / 1.0)</li>
             
             
           
@@ -13197,75 +13185,7 @@ span.nbgrader-label {
             
           
             
-            <li><a href="#1-3_test">Test cell</a> (Score: 0.0 / 1.0)</li>
-            
-            
-          
-            
-            
-          
-            
-            
-          
-            
-            
-          
-            
-            
-            <li><a href="#comment-1-4">Comment</a></li>
-            
-          
-            
-            <li><a href="#1-4_test">Test cell</a> (Score: 0.0 / 0.5)</li>
-            
-            
-          
-            
-            
-          
-            
-            
-          
-            
-            
-          
-            
-            
-          
-            
-            <li><a href="#2-1_test">Test cell</a> (Score: 0.0 / 1.0)</li>
-            
-            
-          
-            
-            
-          
-            
-            
-          
-            
-            <li><a href="#2-2_test">Test cell</a> (Score: 0.0 / 1.0)</li>
-            
-            
-          
-            
-            
-          
-            
-            
-          
-            
-            <li><a href="#2-3_test_code">Test cell</a> (Score: 0.0 / 0.5)</li>
-            
-            
-          
-            
-            <li><a href="#2-3_test_performance">Test cell</a> (Score: 0.0 / 1.0)</li>
-            
-            
-          
-            
-            <li><a href="#challenge_2-3_test">Test cell</a> (Score: 0.0 / 1.0)</li>
+            <li><a href="#3-3_test">Test cell</a> (Score: 1.0 / 1.0)</li>
             
             
           
@@ -13328,297 +13248,7 @@ span.nbgrader-label {
   <div class="prompt input_prompt">
 </div><div class="inner_cell">
     <div class="text_cell_render border-box-sizing rendered_html">
-      <h1 id="SC22x">SC22x<a class="anchor-link" href="#SC22x">&#182;</a></h1><h3 id="&#53076;&#48708;-&#48652;&#46972;&#51060;&#50616;&#53944;&#51032;-&#49819;-&#49457;&#44277;-&#50668;&#48512;-&#50696;&#52769;&#54644;&#48372;&#44592;">&#53076;&#48708; &#48652;&#46972;&#51060;&#50616;&#53944;&#51032; &#49819; &#49457;&#44277; &#50668;&#48512; &#50696;&#52769;&#54644;&#48372;&#44592;<a class="anchor-link" href="#&#53076;&#48708;-&#48652;&#46972;&#51060;&#50616;&#53944;&#51032;-&#49819;-&#49457;&#44277;-&#50668;&#48512;-&#50696;&#52769;&#54644;&#48372;&#44592;">&#182;</a></h3><p>이번 스프린트 챌린지에서는 故 코비 브라이언트 선수의 NBA 필드 골 시도들이 담긴 데이터셋을 다룹니다 (1996년 11월 3일부터 2016년 4월 13일까지의 정규 시즌과 플레이오프 시즌 기록).</p>
-<p>여러분은 각 슛의 성공 여부를 슈팅의 대한 정보, 게임에 대한 정보를 통해서 예측해야 합니다. 이것은 상당히 어려운 예측입니다. 해당 데이터셋은 <a href="(https://github.com/swar/nba_api">NBA API</a> 파이썬 라이브러리를 통해 수집 됐습니다.</p>
-
-    </div>
-  </div></div>
-
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div><div class="inner_cell">
-    <div class="input_area">
-      <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # Google Colab으로 수행한다면 이 셀을 먼저 실행해주세요</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-
-<span class="k">if</span> <span class="s2">&quot;google.colab&quot;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
-    <span class="c1"># Install packages in Colab</span>
-    <span class="o">!</span>pip install <span class="nv">category_encoders</span><span class="o">==</span><span class="m">2</span>.*
-    <span class="o">!</span>pip install pandas-profiling<span class="o">==</span><span class="m">2</span>.*
-</pre></div>
-
-    </div>
-  </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div><div class="inner_cell">
-    <div class="input_area">
-      <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># ignore warnings</span>
-<span class="k">def</span> <span class="nf">warn</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-    <span class="k">pass</span>
-
-
-<span class="kn">import</span> <span class="nn">warnings</span>
-
-<span class="n">warnings</span><span class="o">.</span><span class="n">warn</span> <span class="o">=</span> <span class="n">warn</span>
-<span class="c1"># 데이터셋을 불러옵니다</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://ds-lecture-data.s3.ap-northeast-2.amazonaws.com/nba/nba_kobe_bryant.csv&quot;</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
-
-<span class="c1"># 데이터셋이 잘 불러졌는지 확인합니다</span>
-<span class="k">assert</span> <span class="n">df</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">30697</span><span class="p">,</span> <span class="mi">19</span><span class="p">)</span>
-</pre></div>
-
-    </div>
-  </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[3]:</div><div class="inner_cell">
-    <div class="input_area">
-      <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-  </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[3]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>game_id</th>
-      <th>game_event_id</th>
-      <th>player_name</th>
-      <th>period</th>
-      <th>minutes_remaining</th>
-      <th>seconds_remaining</th>
-      <th>action_type</th>
-      <th>shot_type</th>
-      <th>shot_zone_basic</th>
-      <th>shot_zone_area</th>
-      <th>shot_zone_range</th>
-      <th>shot_distance</th>
-      <th>loc_x</th>
-      <th>loc_y</th>
-      <th>shot_made_flag</th>
-      <th>game_date</th>
-      <th>htm</th>
-      <th>vtm</th>
-      <th>season_type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>29600027</td>
-      <td>102</td>
-      <td>Kobe Bryant</td>
-      <td>1</td>
-      <td>0</td>
-      <td>42</td>
-      <td>Jump Shot</td>
-      <td>2PT Field Goal</td>
-      <td>Mid-Range</td>
-      <td>Left Side Center(LC)</td>
-      <td>16-24 ft.</td>
-      <td>18</td>
-      <td>-140</td>
-      <td>116</td>
-      <td>0</td>
-      <td>1996-11-03</td>
-      <td>LAL</td>
-      <td>MIN</td>
-      <td>Regular Season</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>29600031</td>
-      <td>127</td>
-      <td>Kobe Bryant</td>
-      <td>2</td>
-      <td>10</td>
-      <td>8</td>
-      <td>Jump Shot</td>
-      <td>2PT Field Goal</td>
-      <td>Mid-Range</td>
-      <td>Left Side Center(LC)</td>
-      <td>16-24 ft.</td>
-      <td>16</td>
-      <td>-131</td>
-      <td>97</td>
-      <td>0</td>
-      <td>1996-11-05</td>
-      <td>NYK</td>
-      <td>LAL</td>
-      <td>Regular Season</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>29600044</td>
-      <td>124</td>
-      <td>Kobe Bryant</td>
-      <td>2</td>
-      <td>8</td>
-      <td>37</td>
-      <td>Jump Shot</td>
-      <td>3PT Field Goal</td>
-      <td>Mid-Range</td>
-      <td>Left Side Center(LC)</td>
-      <td>16-24 ft.</td>
-      <td>23</td>
-      <td>-142</td>
-      <td>181</td>
-      <td>1</td>
-      <td>1996-11-06</td>
-      <td>CHH</td>
-      <td>LAL</td>
-      <td>Regular Season</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>29600044</td>
-      <td>144</td>
-      <td>Kobe Bryant</td>
-      <td>2</td>
-      <td>6</td>
-      <td>34</td>
-      <td>Jump Shot</td>
-      <td>3PT Field Goal</td>
-      <td>Restricted Area</td>
-      <td>Center(C)</td>
-      <td>Less Than 8 ft.</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1996-11-06</td>
-      <td>CHH</td>
-      <td>LAL</td>
-      <td>Regular Season</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>29600044</td>
-      <td>151</td>
-      <td>Kobe Bryant</td>
-      <td>2</td>
-      <td>5</td>
-      <td>27</td>
-      <td>Jump Shot</td>
-      <td>2PT Field Goal</td>
-      <td>In The Paint (Non-RA)</td>
-      <td>Center(C)</td>
-      <td>8-16 ft.</td>
-      <td>13</td>
-      <td>-10</td>
-      <td>138</td>
-      <td>1</td>
-      <td>1996-11-06</td>
-      <td>CHH</td>
-      <td>LAL</td>
-      <td>Regular Season</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div><div class="inner_cell">
-    <div class="input_area">
-      <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 살펴보기</span>
-<span class="n">df</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-  </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[4]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>game_id              0
-game_event_id        0
-player_name          0
-period               0
-minutes_remaining    0
-seconds_remaining    0
-action_type          0
-shot_type            0
-shot_zone_basic      0
-shot_zone_area       0
-shot_zone_range      0
-shot_distance        0
-loc_x                0
-loc_y                0
-shot_made_flag       0
-game_date            0
-htm                  0
-vtm                  0
-season_type          0
-dtype: int64</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-  <div class="prompt input_prompt">
-</div><div class="inner_cell">
-    <div class="text_cell_render border-box-sizing rendered_html">
-      <h1 id="Part-1---Data-Preprocessing">Part 1 - Data Preprocessing<a class="anchor-link" href="#Part-1---Data-Preprocessing">&#182;</a></h1>
+      <h1 id="SC22x">SC22x<a class="anchor-link" href="#SC22x">&#182;</a></h1>
     </div>
   </div></div>
 
@@ -13626,10 +13256,18 @@ dtype: int64</pre>
   <div class="prompt input_prompt">
 </div><div class="inner_cell">
     <div class="text_cell_render border-box-sizing rendered_html">
-      <h2 id="1.1-&#48516;&#47448;&#47484;-&#50948;&#54620;-&#48288;&#51060;&#49828;&#46972;&#51064;-&#51221;&#54869;&#46020;&#47484;-&#44228;&#49328;&#54616;&#45716;-calculate_baseline_score-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">1.1 &#48516;&#47448;&#47484; &#50948;&#54620; &#48288;&#51060;&#49828;&#46972;&#51064; &#51221;&#54869;&#46020;&#47484; &#44228;&#49328;&#54616;&#45716; <code>calculate_baseline_score</code> &#54632;&#49688;&#47484; &#51089;&#49457;&#54616;&#49464;&#50836;.<a class="anchor-link" href="#1.1-&#48516;&#47448;&#47484;-&#50948;&#54620;-&#48288;&#51060;&#49828;&#46972;&#51064;-&#51221;&#54869;&#46020;&#47484;-&#44228;&#49328;&#54616;&#45716;-calculate_baseline_score-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">&#182;</a></h2><ul>
-<li>예측해야 하는 target은 <code>shot_made_flag</code> 입니다. </li>
-<li>전체 데이터를 써서 baseline <strong>accuracy score</strong>를 계산하세요.</li>
-<li>최빈 클래스를 사용하는 baseline을 가정하세요.</li>
+      <h1 id="Part-3---Confusion-Matrix">Part 3 - Confusion Matrix<a class="anchor-link" href="#Part-3---Confusion-Matrix">&#182;</a></h1>
+    </div>
+  </div></div>
+
+<div class="cell border-box-sizing text_cell rendered">
+  <div class="prompt input_prompt">
+</div><div class="inner_cell">
+    <div class="text_cell_render border-box-sizing rendered_html">
+      <h2 id="3.1-Confusion-Matrix-&#44228;&#49328;">3.1 Confusion Matrix &#44228;&#49328;<a class="anchor-link" href="#3.1-Confusion-Matrix-&#44228;&#49328;">&#182;</a></h2><ul>
+<li>sklearn 라이브러리를 사용하지 않고, 이진분류 모델의 y_pred, y_real로부터 TP, TN, FP, FN의 수를 구하는 <code>confusion_matrix</code> 함수를 작성하세요.</li>
+<li>y_pred, y_real은 길이($\ge2$)가 동일하고 값이 0 또는 1인 리스트입니다.</li>
+<li>1을 Positive, 0을 Negative로 가정합니다.</li>
 </ul>
 
     </div>
@@ -13637,28 +13275,22 @@ dtype: int64</pre>
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="comment-1-1"></a><div class="panel-heading"><span class="nbgrader-label">Student's answer</span><span class="pull-right"><a href="#top">(Top)</a></span></div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div><div class="panel panel-primary nbgrader_cell">
+    <a name="comment-3-1"></a><div class="panel-heading"><span class="nbgrader-label">Student's answer</span><span class="pull-right"><a href="#top">(Top)</a></span></div>
     <div class="panel-body">
       <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calculate_baseline_score</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-    <span class="n">accuracy_score</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="c1"># YOUR CODE HERE</span>
-    <span class="n">target</span> <span class="o">=</span> <span class="s1">&#39;shot_made_flag&#39;</span>
+        <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-    <span class="n">major</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">target</span><span class="p">]</span><span class="o">.</span><span class="n">mode</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">def</span> <span class="nf">confusion_matrix</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_real</span><span class="p">):</span>
+    <span class="n">tp</span><span class="p">,</span> <span class="n">tn</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">fn</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span>
     
-    <span class="n">pred</span> <span class="o">=</span> <span class="p">[</span><span class="n">major</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">target</span><span class="p">])</span>
-    
-    <span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
-    
-    <span class="n">accuracy_score</span> <span class="o">=</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="n">target</span><span class="p">],</span> <span class="n">pred</span><span class="p">)</span>
+    <span class="n">tp</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">((</span><span class="n">y_pred</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">y_real</span> <span class="o">==</span> <span class="mi">1</span><span class="p">))</span>
+    <span class="c1"># YOUR CODE HERE</span>
     
     
     <span class="c1"># YOUR CODE ENDS HERE</span>
     
-    <span class="k">return</span> <span class="n">accuracy_score</span>
+    <span class="k">return</span> <span class="n">tp</span><span class="p">,</span> <span class="n">tn</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">fn</span>
 </pre></div>
 
       </div>
@@ -13670,17 +13302,29 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[6]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="1-1_test"></a><div class="panel-heading"><span class="nbgrader-label">Grade cell: <code>1-1_test</code></span>
+<div class="prompt input_prompt">In&nbsp;[2]:</div><div class="panel panel-primary nbgrader_cell">
+    <a name="3-1_test"></a><div class="panel-heading"><span class="nbgrader-label">Grade cell: <code>3-1_test</code></span>
   <span class="pull-right">
-      Score: 0.5 / 0.5 <a href="#top">(Top)</a>
+      Score: 0.0 / 1.0 <a href="#top">(Top)</a>
   </span></div>
     <div class="panel-body">
       <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="n">baseline_accuracy_score</span> <span class="o">=</span> <span class="n">calculate_baseline_score</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;baseline accuracy score:&quot;</span><span class="p">,</span> <span class="n">baseline_accuracy_score</span><span class="p">)</span>
+        <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">y_real</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">tp</span><span class="p">,</span> <span class="n">tn</span><span class="p">,</span> <span class="n">fp</span><span class="p">,</span> <span class="n">fn</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_real</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;(TP, TN, FP, FN) = (</span><span class="si">{</span><span class="n">tp</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">tn</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">fp</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">fn</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
 <span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="k">assert</span> <span class="n">baseline_accuracy_score</span> <span class="o">==</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;shot_made_flag&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span> <span class="k">as</span> <span class="n">sol_confusion_matrix</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">length</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">length</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">y_real</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">length</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">_tn</span><span class="p">,</span> <span class="n">_fp</span><span class="p">,</span> <span class="n">_fn</span><span class="p">,</span> <span class="n">_tp</span> <span class="o">=</span> <span class="n">sol_confusion_matrix</span><span class="p">(</span><span class="n">y_real</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span><span class="o">.</span><span class="n">ravel</span><span class="p">()</span>
+    <span class="k">assert</span> <span class="p">(</span><span class="n">_tp</span><span class="p">,</span> <span class="n">_tn</span><span class="p">,</span> <span class="n">_fp</span><span class="p">,</span> <span class="n">_fn</span><span class="p">)</span> <span class="o">==</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_real</span><span class="p">),</span> <span class="ne">AssertionError</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">&quot;TC Failed:</span><span class="se">\n\t</span><span class="s2">pred=</span><span class="si">{</span><span class="n">y_pred</span><span class="si">}</span><span class="se">\n\t</span><span class="s2">real=</span><span class="si">{</span><span class="n">y_real</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="p">)</span>
+
 <span class="c1">### END HIDDEN TESTS</span>
 </pre></div>
 
@@ -13700,11 +13344,33 @@ dtype: int64</pre>
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>baseline accuracy score: 0.5526924455158485
+<pre>(TP, TN, FP, FN) = (8, -1, -1, -1)
 </pre>
 </div>
 </div>
 
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">AssertionError</span>                            Traceback (most recent call last)
+<span class="ansi-green-fg">&lt;ipython-input-2-dc92012cc76b&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     11</span>     y_real <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">(</span>np<span class="ansi-blue-fg">.</span>random<span class="ansi-blue-fg">.</span>normal<span class="ansi-blue-fg">(</span>size<span class="ansi-blue-fg">=</span>length<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">&gt;</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>astype<span class="ansi-blue-fg">(</span>int<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     12</span>     _tn<span class="ansi-blue-fg">,</span> _fp<span class="ansi-blue-fg">,</span> _fn<span class="ansi-blue-fg">,</span> _tp <span class="ansi-blue-fg">=</span> sol_confusion_matrix<span class="ansi-blue-fg">(</span>y_real<span class="ansi-blue-fg">,</span> y_pred<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>ravel<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">---&gt; 13</span><span class="ansi-red-fg">     assert (_tp, _tn, _fp, _fn) == confusion_matrix(y_pred, y_real), AssertionError(
+</span><span class="ansi-green-intense-fg ansi-bold">     14</span>         <span class="ansi-blue-fg">f&#34;TC Failed:\n\tpred={y_pred}\n\treal={y_real}&#34;</span>
+<span class="ansi-green-intense-fg ansi-bold">     15</span>     )
+
+<span class="ansi-red-fg">AssertionError</span>: TC Failed:
+	pred=[1 0 1 1 0 0 1 1 0 1]
+	real=[0 0 1 0 0 0 0 1 0 0]</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -13713,9 +13379,9 @@ dtype: int64</pre>
   <div class="prompt input_prompt">
 </div><div class="inner_cell">
     <div class="text_cell_render border-box-sizing rendered_html">
-      <h2 id="1.2-&#45936;&#51060;&#53552;&#49483;&#51012;-&#50500;&#47000;&#51032;-&#44592;&#51456;&#51012;-&#49324;&#50857;&#54644;&#49436;-train/test-&#49483;&#51004;&#47196;-&#45208;&#45572;&#45716;-split_data-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">1.2 &#45936;&#51060;&#53552;&#49483;&#51012; &#50500;&#47000;&#51032; &#44592;&#51456;&#51012; &#49324;&#50857;&#54644;&#49436; train/test &#49483;&#51004;&#47196; &#45208;&#45572;&#45716; <code>split_data</code> &#54632;&#49688;&#47484; &#51089;&#49457;&#54616;&#49464;&#50836;.<a class="anchor-link" href="#1.2-&#45936;&#51060;&#53552;&#49483;&#51012;-&#50500;&#47000;&#51032;-&#44592;&#51456;&#51012;-&#49324;&#50857;&#54644;&#49436;-train/test-&#49483;&#51004;&#47196;-&#45208;&#45572;&#45716;-split_data-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">&#182;</a></h2><ul>
-<li><code>test set</code>: <strong>2014-15</strong> ~ <strong>2015-16</strong> 시즌</li>
-<li>NBA 시즌은 <strong>10월</strong>에 시작해서 <strong>6월</strong>에 종료합니다. </li>
+      <h3 id="3.2-Accuracy,-Precision,-Recall,-F1-&#44228;&#49328;">3.2 Accuracy, Precision, Recall, F1 &#44228;&#49328;<a class="anchor-link" href="#3.2-Accuracy,-Precision,-Recall,-F1-&#44228;&#49328;">&#182;</a></h3><ul>
+<li>sklearn 라이브러리를 사용하지 않고, 이진분류 모델의 y_pred, y_real로부터 Accuracy, Precision, Recall, F1을 구하는 <code>calculate_performances</code> 함수를 작성하세요.</li>
+<li>Accuracy, Precision, Recall은 모두 항상 양수라고 가정해도 됩니다.</li>
 </ul>
 
     </div>
@@ -13723,21 +13389,22 @@ dtype: int64</pre>
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="comment-1-2"></a><div class="panel-heading"><span class="nbgrader-label">Student's answer</span><span class="pull-right"><a href="#top">(Top)</a></span></div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div><div class="panel panel-primary nbgrader_cell">
+    <a name="comment-3-2"></a><div class="panel-heading"><span class="nbgrader-label">Student's answer</span><span class="pull-right"><a href="#top">(Top)</a></span></div>
     <div class="panel-body">
       <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">split_data</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-    <span class="n">train</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="n">test</span> <span class="o">=</span> <span class="kc">None</span>
-
+        <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calculate_performances</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_real</span><span class="p">):</span>
+    <span class="n">accuracy</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">precision</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">recall</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">f1</span> <span class="o">=</span> <span class="mi">0</span>
+    
     <span class="c1"># YOUR CODE HERE</span>
-    <span class="n">test</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;game_date&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="s1">&#39;2014&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;game_date&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="s1">&#39;2016&#39;</span><span class="p">)]</span> <span class="c1">#문제 이해모탐</span>
-
-    <span class="n">train</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;game_date&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;2014&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;game_date&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;2016&#39;</span><span class="p">)]</span>
+    
+    
     <span class="c1"># YOUR CODE ENDS HERE</span>
     
-    <span class="k">return</span> <span class="n">train</span><span class="p">,</span> <span class="n">test</span>
+    <span class="k">return</span> <span class="n">accuracy</span><span class="p">,</span> <span class="n">precision</span><span class="p">,</span> <span class="n">recall</span><span class="p">,</span> <span class="n">f1</span>
 </pre></div>
 
       </div>
@@ -13749,19 +13416,39 @@ dtype: int64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="1-2_test"></a><div class="panel-heading"><span class="nbgrader-label">Grade cell: <code>1-2_test</code></span>
+<div class="prompt input_prompt">In&nbsp;[4]:</div><div class="panel panel-primary nbgrader_cell">
+    <a name="3-2_test"></a><div class="panel-heading"><span class="nbgrader-label">Grade cell: <code>3-2_test</code></span>
   <span class="pull-right">
-      Score: 0.0 / 0.5 <a href="#top">(Top)</a>
+      Score: 0.0 / 1.0 <a href="#top">(Top)</a>
   </span></div>
     <div class="panel-body">
       <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">,</span> <span class="n">test</span> <span class="o">=</span> <span class="n">split_data</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+        <div class=" highlight hl-ipython3"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="n">y_real</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">accuracy</span><span class="p">,</span> <span class="n">precision</span><span class="p">,</span> <span class="n">recall</span><span class="p">,</span> <span class="n">f1</span> <span class="o">=</span> <span class="n">calculate_performances</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_real</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Accuracy:&quot;</span><span class="p">,</span> <span class="n">accuracy</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Precision:&quot;</span><span class="p">,</span> <span class="n">precision</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Recall:&quot;</span><span class="p">,</span> <span class="n">recall</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;F1:&quot;</span><span class="p">,</span> <span class="n">f1</span><span class="p">)</span>
 <span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="n">_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">_mask_test</span> <span class="o">=</span> <span class="p">(</span><span class="n">_df</span><span class="p">[</span><span class="s2">&quot;game_date&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="s2">&quot;2014-10-01&quot;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">_df</span><span class="p">[</span><span class="s2">&quot;game_date&quot;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="s2">&quot;2016-06-30&quot;</span><span class="p">)</span>
-<span class="k">assert</span> <span class="p">(</span><span class="o">~</span><span class="n">_mask_test</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">train</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">_mask_test</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_recall_fscore_support</span> <span class="k">as</span> <span class="n">prfs</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">length</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">):</span>
+    <span class="n">y_pred</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">length</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">y_real</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">length</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+    <span class="n">y_pred</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">y_real</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">accuracy</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">y_pred</span> <span class="o">==</span> <span class="n">y_real</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_real</span><span class="p">)</span>
+    <span class="n">precision</span><span class="p">,</span> <span class="n">recall</span><span class="p">,</span> <span class="n">f1</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">prfs</span><span class="p">(</span><span class="n">y_real</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">average</span><span class="o">=</span><span class="s2">&quot;binary&quot;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span>
+        <span class="nb">map</span><span class="p">(</span>
+            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">1e-6</span><span class="p">,</span>
+            <span class="nb">zip</span><span class="p">(</span>
+                <span class="p">(</span><span class="n">accuracy</span><span class="p">,</span> <span class="n">precision</span><span class="p">,</span> <span class="n">recall</span><span class="p">,</span> <span class="n">f1</span><span class="p">),</span>
+                <span class="n">calculate_performances</span><span class="p">(</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y_real</span><span class="p">),</span>
+            <span class="p">),</span>
+        <span class="p">)</span>
+    <span class="p">),</span> <span class="ne">AssertionError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TC Failed:</span><span class="se">\n\t</span><span class="s2">pred=</span><span class="si">{</span><span class="n">y_pred</span><span class="si">}</span><span class="se">\n\t</span><span class="s2">real=</span><span class="si">{</span><span class="n">y_real</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="c1">### END HIDDEN TESTS</span>
 </pre></div>
 
@@ -13774,6 +13461,20 @@ dtype: int64</pre>
 <div class="output_wrapper">
 <div class="output">
 
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Accuracy: 0
+Precision: 0
+Recall: 0
+F1: 0
+</pre>
+</div>
+</div>
 
 <div class="output_area">
 
@@ -13784,331 +13485,17 @@ dtype: int64</pre>
 <pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">AssertionError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-8-3120f1dac6ef&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> _df <span class="ansi-blue-fg">=</span> df<span class="ansi-blue-fg">.</span>copy<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> _mask_test <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">(</span>_df<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#34;game_date&#34;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">&gt;=</span> <span class="ansi-blue-fg">&#34;2014-10-01&#34;</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">&amp;</span> <span class="ansi-blue-fg">(</span>_df<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#34;game_date&#34;</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">&lt;=</span> <span class="ansi-blue-fg">&#34;2016-06-30&#34;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 5</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">assert</span> <span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">~</span>_mask_test<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>sum<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">==</span> len<span class="ansi-blue-fg">(</span>train<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      6</span> <span class="ansi-green-fg">assert</span> _mask_test<span class="ansi-blue-fg">.</span>sum<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">==</span> len<span class="ansi-blue-fg">(</span>test<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span> <span class="ansi-red-fg">### END HIDDEN TESTS</span>
+<span class="ansi-green-fg">&lt;ipython-input-4-86966f12466f&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-intense-fg ansi-bold">     16</span>     accuracy <span class="ansi-blue-fg">=</span> sum<span class="ansi-blue-fg">(</span>y_pred <span class="ansi-blue-fg">==</span> y_real<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">*</span> <span class="ansi-cyan-fg">1.0</span> <span class="ansi-blue-fg">/</span> len<span class="ansi-blue-fg">(</span>y_real<span class="ansi-blue-fg">)</span>
+<span class="ansi-green-intense-fg ansi-bold">     17</span>     precision<span class="ansi-blue-fg">,</span> recall<span class="ansi-blue-fg">,</span> f1<span class="ansi-blue-fg">,</span> _ <span class="ansi-blue-fg">=</span> prfs<span class="ansi-blue-fg">(</span>y_real<span class="ansi-blue-fg">,</span> y_pred<span class="ansi-blue-fg">,</span> average<span class="ansi-blue-fg">=</span><span class="ansi-blue-fg">&#34;binary&#34;</span><span class="ansi-blue-fg">)</span>
+<span class="ansi-green-fg">---&gt; 18</span><span class="ansi-red-fg">     assert all(
+</span><span class="ansi-green-intense-fg ansi-bold">     19</span>         map(
+<span class="ansi-green-intense-fg ansi-bold">     20</span>             <span class="ansi-green-fg">lambda</span> x<span class="ansi-blue-fg">:</span> abs<span class="ansi-blue-fg">(</span>x<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">]</span> <span class="ansi-blue-fg">-</span> x<span class="ansi-blue-fg">[</span><span class="ansi-cyan-fg">1</span><span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">&lt;</span> <span class="ansi-cyan-fg">1e-6</span><span class="ansi-blue-fg">,</span>
 
-<span class="ansi-red-fg">AssertionError</span>: </pre>
+<span class="ansi-red-fg">AssertionError</span>: TC Failed:
+	pred=[1 0 1 1 0 0 1 1 0 1]
+	real=[1 0 1 0 0 0 0 1 0 0]</pre>
 </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div><div class="inner_cell">
-    <div class="input_area">
-      <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span>
-</pre></div>
-
-    </div>
-  </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[9]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>game_id</th>
-      <th>game_event_id</th>
-      <th>player_name</th>
-      <th>period</th>
-      <th>minutes_remaining</th>
-      <th>seconds_remaining</th>
-      <th>action_type</th>
-      <th>shot_type</th>
-      <th>shot_zone_basic</th>
-      <th>shot_zone_area</th>
-      <th>shot_zone_range</th>
-      <th>shot_distance</th>
-      <th>loc_x</th>
-      <th>loc_y</th>
-      <th>shot_made_flag</th>
-      <th>game_date</th>
-      <th>htm</th>
-      <th>vtm</th>
-      <th>season_type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>29600027</td>
-      <td>102</td>
-      <td>Kobe Bryant</td>
-      <td>1</td>
-      <td>0</td>
-      <td>42</td>
-      <td>Jump Shot</td>
-      <td>2PT Field Goal</td>
-      <td>Mid-Range</td>
-      <td>Left Side Center(LC)</td>
-      <td>16-24 ft.</td>
-      <td>18</td>
-      <td>-140</td>
-      <td>116</td>
-      <td>0</td>
-      <td>1996-11-03</td>
-      <td>LAL</td>
-      <td>MIN</td>
-      <td>Regular Season</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>29600031</td>
-      <td>127</td>
-      <td>Kobe Bryant</td>
-      <td>2</td>
-      <td>10</td>
-      <td>8</td>
-      <td>Jump Shot</td>
-      <td>2PT Field Goal</td>
-      <td>Mid-Range</td>
-      <td>Left Side Center(LC)</td>
-      <td>16-24 ft.</td>
-      <td>16</td>
-      <td>-131</td>
-      <td>97</td>
-      <td>0</td>
-      <td>1996-11-05</td>
-      <td>NYK</td>
-      <td>LAL</td>
-      <td>Regular Season</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>29600044</td>
-      <td>124</td>
-      <td>Kobe Bryant</td>
-      <td>2</td>
-      <td>8</td>
-      <td>37</td>
-      <td>Jump Shot</td>
-      <td>3PT Field Goal</td>
-      <td>Mid-Range</td>
-      <td>Left Side Center(LC)</td>
-      <td>16-24 ft.</td>
-      <td>23</td>
-      <td>-142</td>
-      <td>181</td>
-      <td>1</td>
-      <td>1996-11-06</td>
-      <td>CHH</td>
-      <td>LAL</td>
-      <td>Regular Season</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>29600044</td>
-      <td>144</td>
-      <td>Kobe Bryant</td>
-      <td>2</td>
-      <td>6</td>
-      <td>34</td>
-      <td>Jump Shot</td>
-      <td>3PT Field Goal</td>
-      <td>Restricted Area</td>
-      <td>Center(C)</td>
-      <td>Less Than 8 ft.</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1996-11-06</td>
-      <td>CHH</td>
-      <td>LAL</td>
-      <td>Regular Season</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>29600044</td>
-      <td>151</td>
-      <td>Kobe Bryant</td>
-      <td>2</td>
-      <td>5</td>
-      <td>27</td>
-      <td>Jump Shot</td>
-      <td>2PT Field Goal</td>
-      <td>In The Paint (Non-RA)</td>
-      <td>Center(C)</td>
-      <td>8-16 ft.</td>
-      <td>13</td>
-      <td>-10</td>
-      <td>138</td>
-      <td>1</td>
-      <td>1996-11-06</td>
-      <td>CHH</td>
-      <td>LAL</td>
-      <td>Regular Season</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>30692</th>
-      <td>21501228</td>
-      <td>272</td>
-      <td>Kobe Bryant</td>
-      <td>3</td>
-      <td>9</td>
-      <td>45</td>
-      <td>Jump Shot</td>
-      <td>3PT Field Goal</td>
-      <td>Above the Break 3</td>
-      <td>Left Side Center(LC)</td>
-      <td>24+ ft.</td>
-      <td>25</td>
-      <td>-96</td>
-      <td>237</td>
-      <td>0</td>
-      <td>2016-04-13</td>
-      <td>LAL</td>
-      <td>UTA</td>
-      <td>Regular Season</td>
-    </tr>
-    <tr>
-      <th>30693</th>
-      <td>21501228</td>
-      <td>274</td>
-      <td>Kobe Bryant</td>
-      <td>3</td>
-      <td>9</td>
-      <td>40</td>
-      <td>Driving Layup Shot</td>
-      <td>2PT Field Goal</td>
-      <td>Restricted Area</td>
-      <td>Center(C)</td>
-      <td>Less Than 8 ft.</td>
-      <td>0</td>
-      <td>-4</td>
-      <td>0</td>
-      <td>1</td>
-      <td>2016-04-13</td>
-      <td>LAL</td>
-      <td>UTA</td>
-      <td>Regular Season</td>
-    </tr>
-    <tr>
-      <th>30694</th>
-      <td>21501228</td>
-      <td>281</td>
-      <td>Kobe Bryant</td>
-      <td>3</td>
-      <td>9</td>
-      <td>0</td>
-      <td>Jump Shot</td>
-      <td>3PT Field Goal</td>
-      <td>Above the Break 3</td>
-      <td>Center(C)</td>
-      <td>24+ ft.</td>
-      <td>31</td>
-      <td>-32</td>
-      <td>313</td>
-      <td>0</td>
-      <td>2016-04-13</td>
-      <td>LAL</td>
-      <td>UTA</td>
-      <td>Regular Season</td>
-    </tr>
-    <tr>
-      <th>30695</th>
-      <td>21501228</td>
-      <td>200</td>
-      <td>Kobe Bryant</td>
-      <td>2</td>
-      <td>4</td>
-      <td>56</td>
-      <td>Driving Layup Shot</td>
-      <td>2PT Field Goal</td>
-      <td>Restricted Area</td>
-      <td>Center(C)</td>
-      <td>Less Than 8 ft.</td>
-      <td>0</td>
-      <td>6</td>
-      <td>-5</td>
-      <td>1</td>
-      <td>2016-04-13</td>
-      <td>LAL</td>
-      <td>UTA</td>
-      <td>Regular Season</td>
-    </tr>
-    <tr>
-      <th>30696</th>
-      <td>21501228</td>
-      <td>72</td>
-      <td>Kobe Bryant</td>
-      <td>1</td>
-      <td>4</td>
-      <td>14</td>
-      <td>Driving Reverse Layup Shot</td>
-      <td>2PT Field Goal</td>
-      <td>Restricted Area</td>
-      <td>Center(C)</td>
-      <td>Less Than 8 ft.</td>
-      <td>2</td>
-      <td>-17</td>
-      <td>-11</td>
-      <td>1</td>
-      <td>2016-04-13</td>
-      <td>LAL</td>
-      <td>UTA</td>
-      <td>Regular Season</td>
-    </tr>
-  </tbody>
-</table>
-<p>30697 rows × 19 columns</p>
-</div>
-</div>
-
 </div>
 
 </div>
@@ -14119,16 +13506,11 @@ dtype: int64</pre>
   <div class="prompt input_prompt">
 </div><div class="inner_cell">
     <div class="text_cell_render border-box-sizing rendered_html">
-      <h2 id="1.3-&#49352;&#47196;&#50868;-feature&#47484;-&#47564;&#46300;&#45716;-feature_engineering-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">1.3 &#49352;&#47196;&#50868; feature&#47484; &#47564;&#46300;&#45716; <code>feature_engineering</code> &#54632;&#49688;&#47484; &#51089;&#49457;&#54616;&#49464;&#50836;.<a class="anchor-link" href="#1.3-&#49352;&#47196;&#50868;-feature&#47484;-&#47564;&#46300;&#45716;-feature_engineering-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">&#182;</a></h2><ul>
-<li>최소 4개 이상의 새로운 feature를 만드세요. 아래의 리스트를 사용하셔도 되고 스스로의 아이디어로 만들어 주셔도 괜찮습니다.<ul>
-<li><strong>Homecourt Advantage</strong>: 홈 팀(<code>htm</code>)이 Los Angeles Lakers (<code>LAL</code>)인지 여부</li>
-<li><strong>Opponent</strong>: LA Lakers를 상대하는 팀을 나타내는 feature</li>
-<li><strong>Seconds remaining in the period</strong>: 피리어드에 남은 총 시간 (분과 초를 합칩니다)</li>
-<li><strong>Seconds remaining in the game</strong>: 게임에 남은 총 시간 (피리어드와 초를 합칩니다). 농구에서 게임은 총 4개의 피리어드로 이루어져 있습니다 (각 12분)</li>
-<li><strong>Made previous shot</strong>: 코비 브라이언트의 예전 슛이 성공했는지 여부</li>
+      <h3 id="3.3-TPR,-FPR,-AUC">3.3 TPR, FPR, AUC<a class="anchor-link" href="#3.3-TPR,-FPR,-AUC">&#182;</a></h3><ul>
+<li>sklearn 라이브러리를 사용하지 않고, 이진분류 모델의 예측 확률, 실제 label 및 threshold로부터 TPR, FPR을 구하는 <code>calculate_prs</code> 함수를 작성하세요.<ul>
+<li><code>y_pred_proba</code> &gt; <code>threshold</code>일 때 모델은 해당 sample을 1이라고 분류합니다.</li>
 </ul>
 </li>
-<li>학습에 사용하지 않는 특성은 drop하세요.</li>
 </ul>
 
     </div>
@@ -14136,447 +13518,26 @@ dtype: int64</pre>
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="comment-1-3"></a><div class="panel-heading"><span class="nbgrader-label">Student's answer</span><span class="pull-right"><a href="#top">(Top)</a></span></div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div><div class="panel panel-primary nbgrader_cell">
+    <a name="comment-3-3"></a><div class="panel-heading"><span class="nbgrader-label">Student's answer</span><span class="pull-right"><a href="#top">(Top)</a></span></div>
     <div class="panel-body">
       <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">feature_engineering</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-    <span class="n">df_tmp</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-
+        <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calculate_prs</span><span class="p">(</span><span class="n">y_pred_proba</span><span class="p">,</span> <span class="n">y_real</span><span class="p">,</span> <span class="n">threshold</span><span class="p">):</span>
+    <span class="n">TPR</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">FPR</span> <span class="o">=</span> <span class="mf">0.0</span>
+    
     <span class="c1"># YOUR CODE HERE</span>
     
     
     <span class="c1"># YOUR CODE ENDS HERE</span>
     
-    <span class="k">return</span> <span class="n">df_tmp</span>
+    <span class="k">return</span> <span class="n">TPR</span><span class="p">,</span> <span class="n">FPR</span>
 </pre></div>
 
       </div>
     </div>
     
   </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="1-3_test"></a><div class="panel-heading"><span class="nbgrader-label">Grade cell: <code>1-3_test</code></span>
-  <span class="pull-right">
-      Score: 0.0 / 1.0 <a href="#top">(Top)</a>
-  </span></div>
-    <div class="panel-body">
-      <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
-
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
-<span class="c1">### END HIDDEN TESTS</span>
-<span class="n">train_processed</span> <span class="o">=</span> <span class="n">feature_engineering</span><span class="p">(</span><span class="n">train</span><span class="p">)</span>
-<span class="n">test_processed</span> <span class="o">=</span> <span class="n">feature_engineering</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
-<span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">train_processed</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span> <span class="o">&gt;=</span> <span class="mi">2</span>
-<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">test_processed</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">-</span> <span class="nb">set</span><span class="p">(</span><span class="n">test</span><span class="o">.</span><span class="n">columns</span><span class="p">))</span> <span class="o">&gt;=</span> <span class="mi">2</span>
-<span class="c1">### END HIDDEN TESTS</span>
-</pre></div>
-
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AssertionError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-11-7e81bc23e420&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span> test_processed <span class="ansi-blue-fg">=</span> feature_engineering<span class="ansi-blue-fg">(</span>test<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      8</span> <span class="ansi-red-fg">### BEGIN HIDDEN TESTS</span>
-<span class="ansi-green-fg">----&gt; 9</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">assert</span> len<span class="ansi-blue-fg">(</span>set<span class="ansi-blue-fg">(</span>train_processed<span class="ansi-blue-fg">.</span>columns<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-</span> set<span class="ansi-blue-fg">(</span>train<span class="ansi-blue-fg">.</span>columns<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">&gt;=</span> <span class="ansi-cyan-fg">2</span>
-<span class="ansi-green-intense-fg ansi-bold">     10</span> <span class="ansi-green-fg">assert</span> len<span class="ansi-blue-fg">(</span>set<span class="ansi-blue-fg">(</span>test_processed<span class="ansi-blue-fg">.</span>columns<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">-</span> set<span class="ansi-blue-fg">(</span>test<span class="ansi-blue-fg">.</span>columns<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">&gt;=</span> <span class="ansi-cyan-fg">2</span>
-<span class="ansi-green-intense-fg ansi-bold">     11</span> <span class="ansi-red-fg">### END HIDDEN TESTS</span>
-
-<span class="ansi-red-fg">AssertionError</span>: </pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div><div class="inner_cell">
-    <div class="input_area">
-      <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train_processed</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-  </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[12]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>game_id</th>
-      <th>game_event_id</th>
-      <th>player_name</th>
-      <th>period</th>
-      <th>minutes_remaining</th>
-      <th>seconds_remaining</th>
-      <th>action_type</th>
-      <th>shot_type</th>
-      <th>shot_zone_basic</th>
-      <th>shot_zone_area</th>
-      <th>shot_zone_range</th>
-      <th>shot_distance</th>
-      <th>loc_x</th>
-      <th>loc_y</th>
-      <th>shot_made_flag</th>
-      <th>game_date</th>
-      <th>htm</th>
-      <th>vtm</th>
-      <th>season_type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>29600027</td>
-      <td>102</td>
-      <td>Kobe Bryant</td>
-      <td>1</td>
-      <td>0</td>
-      <td>42</td>
-      <td>Jump Shot</td>
-      <td>2PT Field Goal</td>
-      <td>Mid-Range</td>
-      <td>Left Side Center(LC)</td>
-      <td>16-24 ft.</td>
-      <td>18</td>
-      <td>-140</td>
-      <td>116</td>
-      <td>0</td>
-      <td>1996-11-03</td>
-      <td>LAL</td>
-      <td>MIN</td>
-      <td>Regular Season</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>29600031</td>
-      <td>127</td>
-      <td>Kobe Bryant</td>
-      <td>2</td>
-      <td>10</td>
-      <td>8</td>
-      <td>Jump Shot</td>
-      <td>2PT Field Goal</td>
-      <td>Mid-Range</td>
-      <td>Left Side Center(LC)</td>
-      <td>16-24 ft.</td>
-      <td>16</td>
-      <td>-131</td>
-      <td>97</td>
-      <td>0</td>
-      <td>1996-11-05</td>
-      <td>NYK</td>
-      <td>LAL</td>
-      <td>Regular Season</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>29600044</td>
-      <td>124</td>
-      <td>Kobe Bryant</td>
-      <td>2</td>
-      <td>8</td>
-      <td>37</td>
-      <td>Jump Shot</td>
-      <td>3PT Field Goal</td>
-      <td>Mid-Range</td>
-      <td>Left Side Center(LC)</td>
-      <td>16-24 ft.</td>
-      <td>23</td>
-      <td>-142</td>
-      <td>181</td>
-      <td>1</td>
-      <td>1996-11-06</td>
-      <td>CHH</td>
-      <td>LAL</td>
-      <td>Regular Season</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>29600044</td>
-      <td>144</td>
-      <td>Kobe Bryant</td>
-      <td>2</td>
-      <td>6</td>
-      <td>34</td>
-      <td>Jump Shot</td>
-      <td>3PT Field Goal</td>
-      <td>Restricted Area</td>
-      <td>Center(C)</td>
-      <td>Less Than 8 ft.</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>1996-11-06</td>
-      <td>CHH</td>
-      <td>LAL</td>
-      <td>Regular Season</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>29600044</td>
-      <td>151</td>
-      <td>Kobe Bryant</td>
-      <td>2</td>
-      <td>5</td>
-      <td>27</td>
-      <td>Jump Shot</td>
-      <td>2PT Field Goal</td>
-      <td>In The Paint (Non-RA)</td>
-      <td>Center(C)</td>
-      <td>8-16 ft.</td>
-      <td>13</td>
-      <td>-10</td>
-      <td>138</td>
-      <td>1</td>
-      <td>1996-11-06</td>
-      <td>CHH</td>
-      <td>LAL</td>
-      <td>Regular Season</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div><div class="inner_cell">
-    <div class="input_area">
-      <div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_processed</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-  </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[13]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>game_id</th>
-      <th>game_event_id</th>
-      <th>player_name</th>
-      <th>period</th>
-      <th>minutes_remaining</th>
-      <th>seconds_remaining</th>
-      <th>action_type</th>
-      <th>shot_type</th>
-      <th>shot_zone_basic</th>
-      <th>shot_zone_area</th>
-      <th>shot_zone_range</th>
-      <th>shot_distance</th>
-      <th>loc_x</th>
-      <th>loc_y</th>
-      <th>shot_made_flag</th>
-      <th>game_date</th>
-      <th>htm</th>
-      <th>vtm</th>
-      <th>season_type</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>28871</th>
-      <td>21400003</td>
-      <td>76</td>
-      <td>Kobe Bryant</td>
-      <td>1</td>
-      <td>6</td>
-      <td>13</td>
-      <td>Jump Shot</td>
-      <td>2PT Field Goal</td>
-      <td>Mid-Range</td>
-      <td>Center(C)</td>
-      <td>16-24 ft.</td>
-      <td>20</td>
-      <td>-54</td>
-      <td>201</td>
-      <td>0</td>
-      <td>2014-10-28</td>
-      <td>LAL</td>
-      <td>HOU</td>
-      <td>Regular Season</td>
-    </tr>
-    <tr>
-      <th>28872</th>
-      <td>21400003</td>
-      <td>94</td>
-      <td>Kobe Bryant</td>
-      <td>1</td>
-      <td>4</td>
-      <td>45</td>
-      <td>Jump Shot</td>
-      <td>2PT Field Goal</td>
-      <td>In The Paint (Non-RA)</td>
-      <td>Center(C)</td>
-      <td>Less Than 8 ft.</td>
-      <td>6</td>
-      <td>-16</td>
-      <td>63</td>
-      <td>1</td>
-      <td>2014-10-28</td>
-      <td>LAL</td>
-      <td>HOU</td>
-      <td>Regular Season</td>
-    </tr>
-    <tr>
-      <th>28873</th>
-      <td>21400003</td>
-      <td>413</td>
-      <td>Kobe Bryant</td>
-      <td>3</td>
-      <td>5</td>
-      <td>52</td>
-      <td>Turnaround Jump Shot</td>
-      <td>2PT Field Goal</td>
-      <td>Mid-Range</td>
-      <td>Right Side(R)</td>
-      <td>16-24 ft.</td>
-      <td>18</td>
-      <td>166</td>
-      <td>78</td>
-      <td>0</td>
-      <td>2014-10-28</td>
-      <td>LAL</td>
-      <td>HOU</td>
-      <td>Regular Season</td>
-    </tr>
-    <tr>
-      <th>28874</th>
-      <td>21400003</td>
-      <td>520</td>
-      <td>Kobe Bryant</td>
-      <td>4</td>
-      <td>9</td>
-      <td>36</td>
-      <td>Jump Shot</td>
-      <td>3PT Field Goal</td>
-      <td>Above the Break 3</td>
-      <td>Left Side Center(LC)</td>
-      <td>24+ ft.</td>
-      <td>27</td>
-      <td>-138</td>
-      <td>241</td>
-      <td>0</td>
-      <td>2014-10-28</td>
-      <td>LAL</td>
-      <td>HOU</td>
-      <td>Regular Season</td>
-    </tr>
-    <tr>
-      <th>28875</th>
-      <td>21400003</td>
-      <td>553</td>
-      <td>Kobe Bryant</td>
-      <td>4</td>
-      <td>7</td>
-      <td>16</td>
-      <td>Jump Shot</td>
-      <td>2PT Field Goal</td>
-      <td>Mid-Range</td>
-      <td>Left Side(L)</td>
-      <td>16-24 ft.</td>
-      <td>19</td>
-      <td>-179</td>
-      <td>88</td>
-      <td>0</td>
-      <td>2014-10-28</td>
-      <td>LAL</td>
-      <td>HOU</td>
-      <td>Regular Season</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
 </div>
 
 </div>
@@ -14584,152 +13545,9 @@ dtype: int64</pre>
   <div class="prompt input_prompt">
 </div><div class="inner_cell">
     <div class="text_cell_render border-box-sizing rendered_html">
-      <h2 id="1.4-train-/-test-&#49483;&#51012;-features(X)&#50752;-target(y)&#51004;&#47196;-&#44033;&#44033;-&#45208;&#45572;&#45716;-divide_data-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">1.4 train / test &#49483;&#51012; features(X)&#50752; target(y)&#51004;&#47196; &#44033;&#44033; &#45208;&#45572;&#45716; <code>divide_data</code> &#54632;&#49688;&#47484; &#51089;&#49457;&#54616;&#49464;&#50836;.<a class="anchor-link" href="#1.4-train-/-test-&#49483;&#51012;-features(X)&#50752;-target(y)&#51004;&#47196;-&#44033;&#44033;-&#45208;&#45572;&#45716;-divide_data-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">&#182;</a></h2>
-    </div>
-  </div></div>
-
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="comment-1-4"></a><div class="panel-heading"><span class="nbgrader-label">Student's answer</span><span class="pull-right"><a href="#top">(Top)</a></span></div>
-    <div class="panel-body">
-      <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">divide_data</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-    <span class="n">X</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="kc">None</span>
-
-    <span class="c1"># YOUR CODE HERE</span>
-    
-    
-    <span class="c1"># YOUR CODE ENDS HERE</span>
-
-    <span class="k">return</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span>
-</pre></div>
-
-      </div>
-    </div>
-    <div class="panel-footer">
-  <div>
-    <b>Comments:</b> <p>No response.</p>
-
-  </div>
-</div>
-  </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="1-4_test"></a><div class="panel-heading"><span class="nbgrader-label">Grade cell: <code>1-4_test</code></span>
-  <span class="pull-right">
-      Score: 0.0 / 0.5 <a href="#top">(Top)</a>
-  </span></div>
-    <div class="panel-body">
-      <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">divide_data</span><span class="p">(</span><span class="n">train_processed</span><span class="p">)</span>
-<span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">divide_data</span><span class="p">(</span><span class="n">test_processed</span><span class="p">)</span>
-<span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="n">y_train</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;shot_made_flag&quot;</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span>
-        <span class="nb">set</span><span class="p">(</span><span class="n">y_train</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">==</span> <span class="p">{</span><span class="s2">&quot;shot_made_flag&quot;</span><span class="p">}</span>
-    <span class="p">)</span>
-<span class="k">assert</span> <span class="s2">&quot;shot_made_flag&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
-<span class="c1">### END HIDDEN TESTS</span>
-</pre></div>
-
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-15-bc0e520b5373&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      6</span> <span class="ansi-green-fg">else</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span>     assert isinstance(y_train, pd.DataFrame) &amp; (
-<span class="ansi-green-fg">----&gt; 8</span><span class="ansi-red-fg">         </span>set<span class="ansi-blue-fg">(</span>y_train<span class="ansi-blue-fg">.</span>columns<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">==</span> <span class="ansi-blue-fg">{</span><span class="ansi-blue-fg">&#34;shot_made_flag&#34;</span><span class="ansi-blue-fg">}</span>
-<span class="ansi-green-intense-fg ansi-bold">      9</span>     )
-<span class="ansi-green-intense-fg ansi-bold">     10</span> <span class="ansi-green-fg">assert</span> <span class="ansi-blue-fg">&#34;shot_made_flag&#34;</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">in</span> set<span class="ansi-blue-fg">(</span>X_train<span class="ansi-blue-fg">.</span>columns<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">AttributeError</span>: &#39;NoneType&#39; object has no attribute &#39;columns&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div><div class="inner_cell">
-    <div class="input_area">
-      <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">X_test</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-
-    </div>
-  </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-16-1edc748011d7&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>X_train<span class="ansi-blue-fg">.</span>shape<span class="ansi-blue-fg">,</span> X_test<span class="ansi-blue-fg">.</span>shape
-
-<span class="ansi-red-fg">AttributeError</span>: &#39;NoneType&#39; object has no attribute &#39;shape&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-  <div class="prompt input_prompt">
-</div><div class="inner_cell">
-    <div class="text_cell_render border-box-sizing rendered_html">
-      <h1 id="Part-2---Modeling-&amp;-Evaluation">Part 2 - Modeling &amp; Evaluation<a class="anchor-link" href="#Part-2---Modeling-&amp;-Evaluation">&#182;</a></h1>
-    </div>
-  </div></div>
-
-<div class="cell border-box-sizing text_cell rendered">
-  <div class="prompt input_prompt">
-</div><div class="inner_cell">
-    <div class="text_cell_render border-box-sizing rendered_html">
-      <h2 id="2.1-Decision-Tree-&#46608;&#45716;-RandomForest-&#47784;&#45944;-&#54617;&#49845;-&#54028;&#51060;&#54532;&#46972;&#51064;&#51012;-&#49373;&#49457;&#54616;&#44256;-&#54617;&#49845;&#54616;&#45716;-fit_trees-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">2.1 Decision Tree &#46608;&#45716; RandomForest &#47784;&#45944; &#54617;&#49845; &#54028;&#51060;&#54532;&#46972;&#51064;&#51012; &#49373;&#49457;&#54616;&#44256; &#54617;&#49845;&#54616;&#45716; <code>fit_trees</code> &#54632;&#49688;&#47484; &#51089;&#49457;&#54616;&#49464;&#50836;.<a class="anchor-link" href="#2.1-Decision-Tree-&#46608;&#45716;-RandomForest-&#47784;&#45944;-&#54617;&#49845;-&#54028;&#51060;&#54532;&#46972;&#51064;&#51012;-&#49373;&#49457;&#54616;&#44256;-&#54617;&#49845;&#54616;&#45716;-fit_trees-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">&#182;</a></h2><ul>
-<li>Scikit-learn의 <code>pipeline</code>을 활용하여 범주형 feature의 encoder, imputer, 모델을 포함하는 하나의 학습 파이프라인을 구축하세요.</li>
-<li>구축한 파이프라인에 대해 <code>RandomizedSearchCV</code>를 사용해 CV를 진행하세요.<ul>
-<li>적어도 두 개 이상의 하이퍼파라미터에 대해 탐색을 진행하세요.</li>
-<li>F1 score을 최대화하는 하이퍼파라미터 조합을 선택하세요.</li>
-</ul>
-</li>
-<li>RandomForestClassifier, RandomizedSearchCV 등 랜덤성이 포함되는 방법론에 대해 모두 <code>random_state=42</code>로 하세요.</li>
-<li>cv는 5 이하, n_iter은 10회 이하로 하세요.</li>
+      <ul>
+<li>아래 셀을 실행하여 예시 입력에 대해 각 threshold에서의 TPR, FPR을 구해 보세요.</li>
+<li>x축을 FPR, y축을 TPR로 하는 ROC Curve를 확인해 보세요.</li>
 </ul>
 
     </div>
@@ -14737,182 +13555,68 @@ dtype: int64</pre>
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="comment-2-1"></a><div class="panel-heading"><span class="nbgrader-label">Student's answer</span><span class="pull-right"><a href="#top">(Top)</a></span></div>
-    <div class="panel-body">
-      <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sklearn</span>
-<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">make_pipeline</span><span class="p">,</span> <span class="n">Pipeline</span>
-<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">RandomizedSearchCV</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">f1_score</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">SimpleImputer</span>
-<span class="kn">from</span> <span class="nn">category_encoders</span> <span class="kn">import</span> <span class="n">OrdinalEncoder</span><span class="p">,</span> <span class="n">OneHotEncoder</span>
-<span class="c1">### IMPORT ANY</span>
-
-
-<span class="k">def</span> <span class="nf">fit_trees</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">):</span>
-    <span class="n">pipe</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="n">clf</span> <span class="o">=</span> <span class="kc">None</span>
-    
-    <span class="c1"># YOUR CODE HERE</span>
-    
-    
-    <span class="c1"># YOUR CODE ENDS HERE</span>
-    
-    <span class="k">return</span> <span class="n">clf</span>
-</pre></div>
-
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="2-1_test"></a><div class="panel-heading"><span class="nbgrader-label">Grade cell: <code>2-1_test</code></span>
+<div class="prompt input_prompt">In&nbsp;[6]:</div><div class="panel panel-primary nbgrader_cell">
+    <a name="3-3_test"></a><div class="panel-heading"><span class="nbgrader-label">Grade cell: <code>3-3_test</code></span>
   <span class="pull-right">
-      Score: 0.0 / 1.0 <a href="#top">(Top)</a>
+      Score: 1.0 / 1.0 <a href="#top">(Top)</a>
   </span></div>
     <div class="panel-body">
       <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf</span> <span class="o">=</span> <span class="n">fit_trees</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best CV F1&quot;</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">best_score_</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Best CV params&quot;</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
-<span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="kn">import</span> <span class="nn">sklearn</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+        <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
-<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">param_distributions</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="o">&gt;=</span> <span class="mi">2</span>
-<span class="k">assert</span> <span class="n">clf</span><span class="o">.</span><span class="n">scoring</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;f1&quot;</span>
-
-<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">estimator</span><span class="p">,</span> <span class="n">sklearn</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="n">Pipeline</span><span class="p">)</span>
-<span class="n">_pipe_steps</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">clf</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">steps</span><span class="p">))[</span><span class="mi">1</span><span class="p">]</span>
-
-<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">_pipe_steps</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span>
-
-<span class="n">found</span> <span class="o">=</span> <span class="kc">False</span>
-<span class="k">for</span> <span class="n">_step</span> <span class="ow">in</span> <span class="n">_pipe_steps</span><span class="p">:</span>
-    <span class="n">found</span> <span class="o">|=</span> <span class="nb">any</span><span class="p">(</span>
-        <span class="p">[</span>
-            <span class="nb">isinstance</span><span class="p">(</span><span class="n">_step</span><span class="p">,</span> <span class="n">_t</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">_t</span> <span class="ow">in</span> <span class="p">[</span><span class="n">RandomForestClassifier</span><span class="p">,</span> <span class="n">DecisionTreeClassifier</span><span class="p">]</span>
-        <span class="p">]</span>
-    <span class="p">)</span>
-    <span class="k">if</span> <span class="n">found</span><span class="p">:</span>
-        <span class="k">break</span>
-<span class="k">assert</span> <span class="n">found</span>
-
-<span class="c1">### END HIDDEN TESTS</span>
-</pre></div>
-
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-18-bd01f3e60f99&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> clf <span class="ansi-blue-fg">=</span> fit_trees<span class="ansi-blue-fg">(</span>X_train<span class="ansi-blue-fg">,</span> y_train<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Best CV F1&#34;</span><span class="ansi-blue-fg">,</span> clf<span class="ansi-blue-fg">.</span>best_score_<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Best CV params&#34;</span><span class="ansi-blue-fg">,</span> clf<span class="ansi-blue-fg">.</span>best_params_<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-red-fg">### BEGIN HIDDEN TESTS</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-green-fg">import</span> sklearn
-
-<span class="ansi-red-fg">AttributeError</span>: &#39;NoneType&#39; object has no attribute &#39;best_score_&#39;</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-  <div class="prompt input_prompt">
-</div><div class="inner_cell">
-    <div class="text_cell_render border-box-sizing rendered_html">
-      <h2 id="2.2-&#54617;&#49845;&#46108;-&#47784;&#45944;&#47196;&#48512;&#53552;-feature-importance&#47484;-&#44228;&#49328;&#54616;&#45716;-get_feature_importances-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">2.2 &#54617;&#49845;&#46108; &#47784;&#45944;&#47196;&#48512;&#53552; feature importance&#47484; &#44228;&#49328;&#54616;&#45716; <code>get_feature_importances</code> &#54632;&#49688;&#47484; &#51089;&#49457;&#54616;&#49464;&#50836;.<a class="anchor-link" href="#2.2-&#54617;&#49845;&#46108;-&#47784;&#45944;&#47196;&#48512;&#53552;-feature-importance&#47484;-&#44228;&#49328;&#54616;&#45716;-get_feature_importances-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">&#182;</a></h2><ul>
-<li>feature_importances 변수에 RandomForest / Decision Tree의 feature<em>importances</em> 값을 할당하면 됩니다.</li>
-</ul>
-
-    </div>
-  </div></div>
-
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="comment-2-2"></a><div class="panel-heading"><span class="nbgrader-label">Student's answer</span><span class="pull-right"><a href="#top">(Top)</a></span></div>
-    <div class="panel-body">
-      <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="k">def</span> <span class="nf">get_feature_importances</span><span class="p">(</span><span class="n">pipe</span><span class="p">,</span> <span class="n">feature_names</span><span class="p">):</span>
-    <span class="n">feature_importances</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">feature_names</span><span class="p">))</span>
-
-    <span class="c1"># YOUR CODE HERE</span>
-    
-    
-    <span class="c1"># YOUR CODE ENDS HERE</span>
-    
-    <span class="k">return</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">feature_names</span><span class="p">,</span> <span class="n">feature_importances</span><span class="p">)),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="2-2_test"></a><div class="panel-heading"><span class="nbgrader-label">Grade cell: <code>2-2_test</code></span>
-  <span class="pull-right">
-      Score: 0.0 / 1.0 <a href="#top">(Top)</a>
-  </span></div>
-    <div class="panel-body">
-      <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="n">feature_importances</span> <span class="o">=</span> <span class="n">get_feature_importances</span><span class="p">(</span>
-    <span class="n">clf</span><span class="o">.</span><span class="n">best_estimator_</span><span class="p">,</span> <span class="nb">list</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">y_pred_proba</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="mf">0.62574153</span><span class="p">,</span>
+        <span class="mf">0.62212357</span><span class="p">,</span>
+        <span class="mf">0.64912789</span><span class="p">,</span>
+        <span class="mf">0.98636048</span><span class="p">,</span>
+        <span class="mf">0.84379945</span><span class="p">,</span>
+        <span class="mf">0.61600836</span><span class="p">,</span>
+        <span class="mf">0.33085066</span><span class="p">,</span>
+        <span class="mf">0.34542886</span><span class="p">,</span>
+        <span class="mf">0.58859945</span><span class="p">,</span>
+        <span class="mf">0.97971037</span><span class="p">,</span>
+        <span class="mf">0.52886705</span><span class="p">,</span>
+        <span class="mf">0.89255893</span><span class="p">,</span>
+        <span class="mf">0.69924888</span><span class="p">,</span>
+        <span class="mf">0.66564046</span><span class="p">,</span>
+        <span class="mf">0.52909411</span><span class="p">,</span>
+        <span class="mf">0.4817106</span><span class="p">,</span>
+        <span class="mf">0.03277238</span><span class="p">,</span>
+        <span class="mf">0.53550684</span><span class="p">,</span>
+        <span class="mf">0.40602853</span><span class="p">,</span>
+        <span class="mf">0.09380067</span><span class="p">,</span>
+    <span class="p">]</span>
 <span class="p">)</span>
-<span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">importance</span> <span class="ow">in</span> <span class="n">feature_importances</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">importance</span><span class="si">:</span><span class="s2">.4f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="kn">import</span> <span class="n">RandomForestClassifier</span>
-<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+<span class="n">y_real</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">thresholds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">y_pred_proba</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">y_pred_proba</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">tpr_fpr_by_threshold</span> <span class="o">=</span> <span class="p">[</span><span class="n">calculate_prs</span><span class="p">(</span><span class="n">y_pred_proba</span><span class="p">,</span> <span class="n">y_real</span><span class="p">,</span> <span class="n">th</span><span class="p">)</span> <span class="k">for</span> <span class="n">th</span> <span class="ow">in</span> <span class="n">thresholds</span><span class="p">]</span>
+<span class="n">tprs</span><span class="p">,</span> <span class="n">fprs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">tpr_fpr_by_threshold</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">th</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">fpr</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">thresholds</span><span class="p">,</span> <span class="n">tprs</span><span class="p">,</span> <span class="n">fprs</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Threshold=</span><span class="si">{</span><span class="n">th</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, TPR=</span><span class="si">{</span><span class="n">tpr</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">, FPR=</span><span class="si">{</span><span class="n">fpr</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2"> &quot;</span><span class="p">)</span>
 
-<span class="n">_model_module</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
-    <span class="nb">filter</span><span class="p">(</span>
-        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">RandomForestClassifier</span><span class="p">)</span>
-        <span class="ow">or</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">DecisionTreeClassifier</span><span class="p">),</span>
-        <span class="n">clf</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">named_steps</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">fprs</span><span class="p">,</span> <span class="n">tprs</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;FPR&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;TPR&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;ROC Curve&quot;</span><span class="p">)</span>
+
+<span class="c1">### BEGIN HIDDEN TESTS</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span>
+
+<span class="n">thresholds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">y_pred_proba</span><span class="p">)</span> <span class="o">+</span> <span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">y_pred_proba</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">])[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">tpr_fpr_by_threshold</span> <span class="o">=</span> <span class="p">[</span><span class="n">calculate_prs</span><span class="p">(</span><span class="n">y_pred_proba</span><span class="p">,</span> <span class="n">y_real</span><span class="p">,</span> <span class="n">th</span><span class="p">)</span> <span class="k">for</span> <span class="n">th</span> <span class="ow">in</span> <span class="n">thresholds</span><span class="p">]</span>
+<span class="n">tprs</span><span class="p">,</span> <span class="n">fprs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">tpr_fpr_by_threshold</span><span class="p">))</span>
+
+<span class="k">assert</span> <span class="nb">all</span><span class="p">(</span>
+    <span class="nb">map</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">all</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="o">&lt;</span> <span class="mf">1e-6</span><span class="p">,</span>
+        <span class="nb">zip</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">fprs</span><span class="p">,</span> <span class="n">tprs</span><span class="p">,</span> <span class="n">thresholds</span><span class="p">),</span>
+            <span class="n">roc_curve</span><span class="p">(</span><span class="n">y_real</span><span class="p">,</span> <span class="n">y_pred_proba</span><span class="p">,</span> <span class="n">drop_intermediate</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+        <span class="p">),</span>
     <span class="p">)</span>
-<span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="n">_feature_importances</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span>
-    <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span> <span class="n">_model_module</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">)),</span>
-    <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-    <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="k">assert</span> <span class="n">_feature_importances</span> <span class="o">==</span> <span class="n">feature_importances</span>
 <span class="c1">### END HIDDEN TESTS</span>
 </pre></div>
 
@@ -14931,223 +13635,45 @@ dtype: int64</pre>
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-20-0600f6d81b05&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> feature_importances = get_feature_importances(
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg">     </span>clf<span class="ansi-blue-fg">.</span>best_estimator_<span class="ansi-blue-fg">,</span> list<span class="ansi-blue-fg">(</span>X_train<span class="ansi-blue-fg">.</span>columns<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> )
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">for</span> name<span class="ansi-blue-fg">,</span> importance <span class="ansi-green-fg">in</span> feature_importances<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span>     print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">f&#34;{name}: {importance:.4f}&#34;</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">AttributeError</span>: &#39;NoneType&#39; object has no attribute &#39;best_estimator_&#39;</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Threshold=1.986, TPR=0.000, FPR=0.000 
+Threshold=0.986, TPR=0.000, FPR=0.000 
+Threshold=0.980, TPR=0.000, FPR=0.000 
+Threshold=0.893, TPR=0.000, FPR=0.000 
+Threshold=0.844, TPR=0.000, FPR=0.000 
+Threshold=0.699, TPR=0.000, FPR=0.000 
+Threshold=0.666, TPR=0.000, FPR=0.000 
+Threshold=0.649, TPR=0.000, FPR=0.000 
+Threshold=0.626, TPR=0.000, FPR=0.000 
+Threshold=0.622, TPR=0.000, FPR=0.000 
+Threshold=0.616, TPR=0.000, FPR=0.000 
+Threshold=0.589, TPR=0.000, FPR=0.000 
+Threshold=0.536, TPR=0.000, FPR=0.000 
+Threshold=0.529, TPR=0.000, FPR=0.000 
+Threshold=0.529, TPR=0.000, FPR=0.000 
+Threshold=0.482, TPR=0.000, FPR=0.000 
+Threshold=0.406, TPR=0.000, FPR=0.000 
+Threshold=0.345, TPR=0.000, FPR=0.000 
+Threshold=0.331, TPR=0.000, FPR=0.000 
+Threshold=0.094, TPR=0.000, FPR=0.000 
+Threshold=0.033, TPR=0.000, FPR=0.000 
+</pre>
 </div>
 </div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-  <div class="prompt input_prompt">
-</div><div class="inner_cell">
-    <div class="text_cell_render border-box-sizing rendered_html">
-      <h2 id="2.3-Test-&#49483;&#51012;-&#49324;&#50857;&#54644;-&#47784;&#45944;&#51032;-&#50696;&#52769;-&#49457;&#45733;(accuracy-score,-F1)&#47484;-&#44228;&#49328;&#54616;&#45716;-calcuate_score-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">2.3 Test &#49483;&#51012; &#49324;&#50857;&#54644; &#47784;&#45944;&#51032; &#50696;&#52769; &#49457;&#45733;(accuracy score, F1)&#47484; &#44228;&#49328;&#54616;&#45716; <code>calcuate_score</code> &#54632;&#49688;&#47484; &#51089;&#49457;&#54616;&#49464;&#50836;.<a class="anchor-link" href="#2.3-Test-&#49483;&#51012;-&#49324;&#50857;&#54644;-&#47784;&#45944;&#51032;-&#50696;&#52769;-&#49457;&#45733;(accuracy-score,-F1)&#47484;-&#44228;&#49328;&#54616;&#45716;-calcuate_score-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">&#182;</a></h2><ul>
-<li>test_accuracy &gt; 0.67, test_f1 &gt; 0.53을 만족하면 기본 성능점수를 얻습니다.</li>
-<li>(도전과제) test_accuracy &gt; 0.68, test_f1 &gt; 0.54을 만족하면 성능점수 만점을 얻습니다.<ul>
-<li>도전과제까지 수행해야 스챌 3점을 얻습니다. </li>
-<li>1.3으로 돌아가 다양한 특성 조합을 시도해 보세요. <ul>
-<li>그리고 2.2로 돌아와 피쳐 중요도를 계산해 보세요.</li>
-<li>어떤 피쳐의 중요도가 가장 높나요?</li>
-<li>중요도가 낮은 피쳐라도 있는 게 좋을까요?</li>
-</ul>
-</li>
-<li>2.1로 돌아가 SearchCV에서 다양한 하이퍼파라미터 옵션 조합을 선택해 보세요.<ul>
-<li>본인이 선택한 모델에서, 각 하이퍼파라미터가 어떤 의미를 가지나요?</li>
-<li>SearchCV가 더 다양한 하이퍼파라미터 조합을 시도하도록 하기 위해 SearchCV의 어떤 옵션을 조정해야 할까요?</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-    </div>
-  </div></div>
-
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="comment-2-3"></a><div class="panel-heading"><span class="nbgrader-label">Student's answer</span><span class="pull-right"><a href="#top">(Top)</a></span></div>
-    <div class="panel-body">
-      <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calculate_score</span><span class="p">(</span><span class="n">pipe</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">):</span>
-    <span class="n">test_accuracy</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">test_f1</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="c1"># YOUR CODE HERE</span>
-    
-    
-    <span class="c1"># YOUR CODE ENDS HERE</span>
-    
-    <span class="k">return</span> <span class="n">test_accuracy</span><span class="p">,</span> <span class="n">test_f1</span>
-</pre></div>
-
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="2-3_test_code"></a><div class="panel-heading"><span class="nbgrader-label">Grade cell: <code>2-3_test_code</code></span>
-  <span class="pull-right">
-      Score: 0.0 / 0.5 <a href="#top">(Top)</a>
-  </span></div>
-    <div class="panel-body">
-      <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_accuracy</span><span class="p">,</span> <span class="n">test_f1</span> <span class="o">=</span> <span class="n">calculate_score</span><span class="p">(</span><span class="n">clf</span><span class="o">.</span><span class="n">best_estimator_</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-<span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="k">assert</span> <span class="n">clf</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span> <span class="o">==</span> <span class="n">test_accuracy</span>
-<span class="k">assert</span> <span class="n">f1_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">clf</span><span class="o">.</span><span class="n">best_estimator_</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">))</span> <span class="o">==</span> <span class="n">test_f1</span>
-<span class="c1">### END HIDDEN TESTS</span>
-</pre></div>
-
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
 
 <div class="output_area">
 
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-22-e7cb47a5966d&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>test_accuracy<span class="ansi-blue-fg">,</span> test_f1 <span class="ansi-blue-fg">=</span> calculate_score<span class="ansi-blue-fg">(</span>clf<span class="ansi-blue-fg">.</span>best_estimator_<span class="ansi-blue-fg">,</span> X_test<span class="ansi-blue-fg">,</span> y_test<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> <span class="ansi-red-fg">### BEGIN HIDDEN TESTS</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">assert</span> clf<span class="ansi-blue-fg">.</span>best_estimator_<span class="ansi-blue-fg">.</span>score<span class="ansi-blue-fg">(</span>X_test<span class="ansi-blue-fg">,</span> y_test<span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">==</span> test_accuracy
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">assert</span> f1_score<span class="ansi-blue-fg">(</span>y_test<span class="ansi-blue-fg">,</span> clf<span class="ansi-blue-fg">.</span>best_estimator_<span class="ansi-blue-fg">.</span>predict<span class="ansi-blue-fg">(</span>X_test<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">==</span> test_f1
-<span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-red-fg">### END HIDDEN TESTS</span>
 
-<span class="ansi-red-fg">AttributeError</span>: &#39;NoneType&#39; object has no attribute &#39;best_estimator_&#39;</pre>
-</div>
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
 </div>
 
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="2-3_test_performance"></a><div class="panel-heading"><span class="nbgrader-label">Grade cell: <code>2-3_test_performance</code></span>
-  <span class="pull-right">
-      Score: 0.0 / 1.0 <a href="#top">(Top)</a>
-  </span></div>
-    <div class="panel-body">
-      <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;test accuracy: &quot;</span><span class="p">,</span> <span class="n">test_accuracy</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;test F1:&quot;</span><span class="p">,</span> <span class="n">test_f1</span><span class="p">)</span>
-<span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="k">assert</span> <span class="n">test_accuracy</span> <span class="o">&gt;</span> <span class="mf">0.67</span>
-<span class="k">assert</span> <span class="n">test_f1</span> <span class="o">&gt;</span> <span class="mf">0.53</span>
-<span class="c1">### END HIDDEN TESTS</span>
-</pre></div>
-
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-23-63a203475b06&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;test accuracy: &#34;</span><span class="ansi-blue-fg">,</span> test_accuracy<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;test F1:&#34;</span><span class="ansi-blue-fg">,</span> test_f1<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-red-fg">### BEGIN HIDDEN TESTS</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">assert</span> test_accuracy <span class="ansi-blue-fg">&gt;</span> <span class="ansi-cyan-fg">0.67</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-green-fg">assert</span> test_f1 <span class="ansi-blue-fg">&gt;</span> <span class="ansi-cyan-fg">0.53</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;test_accuracy&#39; is not defined</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[24]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="challenge_2-3_test"></a><div class="panel-heading"><span class="nbgrader-label">Grade cell: <code>challenge_2-3_test</code></span>
-  <span class="pull-right">
-      Score: 0.0 / 1.0 <a href="#top">(Top)</a>
-  </span></div>
-    <div class="panel-body">
-      <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;test accuracy &gt; 0.68?: &quot;</span><span class="p">,</span> <span class="n">test_accuracy</span> <span class="o">&gt;</span> <span class="mf">0.68</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;test F1 &gt; 0.54?:&quot;</span><span class="p">,</span> <span class="n">test_f1</span> <span class="o">&gt;</span> <span class="mf">0.54</span><span class="p">)</span>
-
-<span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="k">assert</span> <span class="n">test_accuracy</span> <span class="o">&gt;</span> <span class="mf">0.68</span>
-<span class="k">assert</span> <span class="n">test_f1</span> <span class="o">&gt;</span> <span class="mf">0.54</span>
-<span class="c1">### END HIDDEN TESTS</span>
-</pre></div>
-
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-24-75dd9c6198b7&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;test accuracy &gt; 0.68?: &#34;</span><span class="ansi-blue-fg">,</span> test_accuracy <span class="ansi-blue-fg">&gt;</span> <span class="ansi-cyan-fg">0.68</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      2</span> print<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;test F1 &gt; 0.54?:&#34;</span><span class="ansi-blue-fg">,</span> test_f1 <span class="ansi-blue-fg">&gt;</span> <span class="ansi-cyan-fg">0.54</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      3</span> 
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-red-fg">### BEGIN HIDDEN TESTS</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> <span class="ansi-green-fg">assert</span> test_accuracy <span class="ansi-blue-fg">&gt;</span> <span class="ansi-cyan-fg">0.68</span>
-
-<span class="ansi-red-fg">NameError</span>: name &#39;test_accuracy&#39; is not defined</pre>
-</div>
 </div>
 
 </div>
