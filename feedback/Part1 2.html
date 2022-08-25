@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="utf-8" />
-<title>Part2</title>
+<title>Part1</title>
 
 <style type="text/css">
     /*!
@@ -13137,7 +13137,7 @@ span.nbgrader-label {
   <div class="container">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h4>Part2 (Score: 7.0 / 8.0)</h4>
+        <h4>Part1 (Score: 2.0 / 2.0)</h4>
         <div id="toc">
           <ol>
           
@@ -13175,7 +13175,10 @@ span.nbgrader-label {
             
           
             
-            <li><a href="#2-1_test">Test cell</a> (Score: 1.0 / 1.0)</li>
+            
+          
+            
+            <li><a href="#1-1_test">Test cell</a> (Score: 0.5 / 0.5)</li>
             
             
           
@@ -13186,62 +13189,13 @@ span.nbgrader-label {
             
           
             
-            <li><a href="#2-2_test">Test cell</a> (Score: 1.0 / 1.0)</li>
+            <li><a href="#1-2_test">Test cell</a> (Score: 1.5 / 1.5)</li>
             
             
           
             
             
           
-            
-            
-          
-            
-            
-          
-            
-            <li><a href="#2-3_test">Test cell</a> (Score: 0.0 / 1.0)</li>
-            
-            
-          
-            
-            
-          
-            
-            
-          
-            
-            
-          
-            
-            <li><a href="#2-4_test">Test cell</a> (Score: 1.0 / 1.0)</li>
-            
-            
-          
-            
-            
-          
-            
-            
-          
-            
-            <li><a href="#2-5_test">Test cell</a> (Score: 2.0 / 2.0)</li>
-            
-            
-          
-            
-            
-          
-            
-            
-          
-            
-            <li><a href="#2-6_test">Test cell</a> (Score: 1.0 / 1.0)</li>
-            
-            
-          
-            
-            <li><a href="#challenge_2-6_test">Test cell</a> (Score: 1.0 / 1.0)</li>
             
             
           
@@ -13330,373 +13284,9 @@ span.nbgrader-label {
   <div class="prompt input_prompt">
 </div><div class="inner_cell">
     <div class="text_cell_render border-box-sizing rendered_html">
-      <h1 id="Part-2---&#54924;&#44480;(Regression):-Iowa-&#51452;-Ames&#51032;-&#51665;&#44050;-&#50696;&#52769;&#54616;&#44592;-&#127968;">Part 2 - &#54924;&#44480;(Regression): Iowa &#51452; Ames&#51032; &#51665;&#44050; &#50696;&#52769;&#54616;&#44592; &#127968;<a class="anchor-link" href="#Part-2---&#54924;&#44480;(Regression):-Iowa-&#51452;-Ames&#51032;-&#51665;&#44050;-&#50696;&#52769;&#54616;&#44592;-&#127968;">&#182;</a></h1><p>여러분이 다루게 될 데이터는 Iowa 주에 있는 Ames시의 주택들의 정보를 모은 데이터셋입니다.</p>
-<h2 id="&#52860;&#47100;-&#49444;&#47749;">&#52860;&#47100; &#49444;&#47749;<a class="anchor-link" href="#&#52860;&#47100;-&#49444;&#47749;">&#182;</a></h2>
-<pre><code>1stFlrSF: 1층 면적 (square feet)
-
-BedroomAbvGr: 지하실 제외 침실 갯수
-
-BldgType: 주거 형태
-
-       1Fam Single-family Detached  
-       2FmCon   Two-family Conversion; originally built as one-family dwelling
-       Duplx    Duplex
-       TwnhsE   Townhouse End Unit
-       TwnhsI   Townhouse Inside Unit
-
-BsmtHalfBath: 지하실 half-bathroom 개수 (세면대와 변기만 있는 화장실)
-
-BsmtFullBath: 지하실 full bathroom 개수 (세면대, 변기, 샤워, 욕조 전부 있는 욕실)
-
-CentralAir: 중앙 냉방 장치 유무
-
-       N    No
-       Y    Yes
-
-Condition1: 다양한 조건과의 근접성
-
-       Artery   Adjacent to arterial street
-       Feedr    Adjacent to feeder street   
-       Norm Normal  
-       RRNn Within 200' of North-South Railroad
-       RRAn Adjacent to North-South Railroad
-       PosN Near positive off-site feature--park, greenbelt, etc.
-       PosA Adjacent to postive off-site feature
-       RRNe Within 200' of East-West Railroad
-       RRAe Adjacent to East-West Railroad
-
-Condition2: 다양한 조건과의 근접성 (하나 이상 존재할 시)
-
-       Artery   Adjacent to arterial street
-       Feedr    Adjacent to feeder street   
-       Norm Normal  
-       RRNn Within 200' of North-South Railroad
-       RRAn Adjacent to North-South Railroad
-       PosN Near positive off-site feature--park, greenbelt, etc.
-       PosA Adjacent to postive off-site feature
-       RRNe Within 200' of East-West Railroad
-       RRAe Adjacent to East-West Railroad
-
-Electrical: 전기 시스템
-
-       SBrkr    Standard Circuit Breakers &amp; Romex
-       FuseA    Fuse Box over 60 AMP and all Romex wiring (Average) 
-       FuseF    60 AMP Fuse Box and mostly Romex wiring (Fair)
-       FuseP    60 AMP Fuse Box and mostly knob &amp; tube wiring (poor)
-       Mix  Mixed
-
-ExterCond: 외관 소재 현황 평가
-
-       Ex   Excellent
-       Gd   Good
-       TA   Average/Typical
-       Fa   Fair
-       Po   Poor
-
-ExterQual: 외관 소재 품질 평가
-
-       Ex   Excellent
-       Gd   Good
-       TA   Average/Typical
-       Fa   Fair
-       Po   Poor
-
-Exterior1st: 집 외부 소재
-
-       AsbShng  Asbestos Shingles
-       AsphShn  Asphalt Shingles
-       BrkComm  Brick Common
-       BrkFace  Brick Face
-       CBlock   Cinder Block
-       CemntBd  Cement Board
-       HdBoard  Hard Board
-       ImStucc  Imitation Stucco
-       MetalSd  Metal Siding
-       Other    Other
-       Plywood  Plywood
-       PreCast  PreCast 
-       Stone    Stone
-       Stucco   Stucco
-       VinylSd  Vinyl Siding
-       Wd Sdng  Wood Siding
-       WdShing  Wood Shingles
-
-Exterior2nd: 집 외부 소재 (하나 이상 존재할 시)
-
-       AsbShng  Asbestos Shingles
-       AsphShn  Asphalt Shingles
-       BrkComm  Brick Common
-       BrkFace  Brick Face
-       CBlock   Cinder Block
-       CemntBd  Cement Board
-       HdBoard  Hard Board
-       ImStucc  Imitation Stucco
-       MetalSd  Metal Siding
-       Other    Other
-       Plywood  Plywood
-       PreCast  PreCast
-       Stone    Stone
-       Stucco   Stucco
-       VinylSd  Vinyl Siding
-       Wd Sdng  Wood Siding
-       WdShing  Wood Shingles
-
-Foundation: 주택의 토대 종류
-
-       BrkTil   Brick &amp; Tile
-       CBlock   Cinder Block
-       PConc    Poured Concrete 
-       Slab Slab
-       Stone    Stone
-       Wood Wood
-
-FullBath: 지상층의 full-bathroom 갯수
-
-Functional: 주택의 기능성 (공제가 보장되지 않는 한 일반적인 것으로 가정)
-
-       Typ  Typical Functionality
-       Min1 Minor Deductions 1
-       Min2 Minor Deductions 2
-       Mod  Moderate Deductions
-       Maj1 Major Deductions 1
-       Maj2 Major Deductions 2
-       Sev  Severely Damaged
-       Sal  Salvage only
-
-GrLivArea: 지상 주거지역 면적 (sqaure feet)
-
-HalfBath: 지상층 half-bathroom 갯수
-
-Heating: 난방 종류
-
-       Floor    Floor Furnace
-       GasA Gas forced warm air furnace
-       GasW Gas hot water or steam heat
-       Grav Gravity furnace 
-       OthW Hot water or steam heat other than gas
-       Wall Wall furnace
-
-HeatingQC: 난방 품질 및 상태
-
-       Ex   Excellent
-       Gd   Good
-       TA   Average/Typical
-       Fa   Fair
-       Po   Poor
-
-HouseStyle: 주거 형식
-
-       1Story   One story
-       1.5Fin   One and one-half story: 2nd level finished
-       1.5Unf   One and one-half story: 2nd level unfinished
-       2Story   Two story
-       2.5Fin   Two and one-half story: 2nd level finished
-       2.5Unf   Two and one-half story: 2nd level unfinished
-       SFoyer   Split Foyer
-       SLvl Split Level
-
-KitchenAbvGr: 지상층 주방 갯수
-
-KitchenQual: 주방 품질
-
-       Ex   Excellent
-       Gd   Good
-       TA   Typical/Average
-       Fa   Fair
-       Po   Poor
-
-LandContour: 소유지의 평탄도
-
-       Lvl  Near Flat/Level 
-       Bnk  Banked - Quick and significant rise from street grade to building
-       HLS  Hillside - Significant slope from side to side
-       Low  Depression
-
-LandSlope: 소유지 경사도
-
-       Gtl  Gentle slope
-       Mod  Moderate Slope  
-       Sev  Severe Slope
-
-LotArea: 용지 크기 (square feet)
-
-LotConfig: 용지 구성
-
-       Inside   Inside lot
-       Corner   Corner lot
-       CulDSac  Cul-de-sac
-       FR2  Frontage on 2 sides of property
-       FR3  Frontage on 3 sides of property
-
-LotShape: 소유지의 형태
-       Reg  Regular 
-       IR1  Slightly irregular
-       IR2  Moderately Irregular
-       IR3  Irregular
-
-MSSubClass: 분양되는 주거지의 유형    
-
-        20  1-STORY 1946 &amp; NEWER ALL STYLES
-        30  1-STORY 1945 &amp; OLDER
-        40  1-STORY W/FINISHED ATTIC ALL AGES
-        45  1-1/2 STORY - UNFINISHED ALL AGES
-        50  1-1/2 STORY FINISHED ALL AGES
-        60  2-STORY 1946 &amp; NEWER
-        70  2-STORY 1945 &amp; OLDER
-        75  2-1/2 STORY ALL AGES
-        80  SPLIT OR MULTI-LEVEL
-        85  SPLIT FOYER
-        90  DUPLEX - ALL STYLES AND AGES
-       120  1-STORY PUD (Planned Unit Development) - 1946 &amp; NEWER
-       150  1-1/2 STORY PUD - ALL AGES
-       160  2-STORY PUD - 1946 &amp; NEWER
-       180  PUD - MULTILEVEL - INCL SPLIT LEV/FOYER
-       190  2 FAMILY CONVERSION - ALL STYLES AND AGES
-
-MSZoning: 주택이 속해있는 구역 구분
-
-       A    Agriculture
-       C    Commercial
-       FV   Floating Village Residential
-       I    Industrial
-       RH   Residential High Density
-       RL   Residential Low Density
-       RP   Residential Low Density Park 
-       RM   Residential Medium Density
-
-MasVnrType: 석조 베니어 유형
-
-       BrkCmn   Brick Common
-       BrkFace  Brick Face
-       CBlock   Cinder Block
-       None None
-       Stone    Stone
-
-MoSold: 팔린 달  
-
-Neighborhood: Ames시의 경계내 물리적 위치
-
-       Blmngtn  Bloomington Heights
-       Blueste  Bluestem
-       BrDale   Briardale
-       BrkSide  Brookside
-       ClearCr  Clear Creek
-       CollgCr  College Creek
-       Crawfor  Crawford
-       Edwards  Edwards
-       Gilbert  Gilbert
-       IDOTRR   Iowa DOT and Rail Road
-       MeadowV  Meadow Village
-       Mitchel  Mitchell
-       Names    North Ames
-       NoRidge  Northridge
-       NPkVill  Northpark Villa
-       NridgHt  Northridge Heights
-       NWAmes   Northwest Ames
-       OldTown  Old Town
-       SWISU    South &amp; West of Iowa State University
-       Sawyer   Sawyer
-       SawyerW  Sawyer West
-       Somerst  Somerset
-       StoneBr  Stone Brook
-       Timber   Timberland
-       Veenker  Veenker
-
-OverallCond: 주택의 전반적인 상태 평가
-
-       10   Very Excellent
-       9    Excellent
-       8    Very Good
-       7    Good
-       6    Above Average   
-       5    Average
-       4    Below Average   
-       3    Fair
-       2    Poor
-       1    Very Poor
-
-OverallQual: 주택의 전체 자재와 마감재에 대한 평가
-
-       10   Very Excellent
-       9    Excellent
-       8    Very Good
-       7    Good
-       6    Above Average
-       5    Average
-       4    Below Average
-       3    Fair
-       2    Poor
-       1    Very Poor
-
-PavedDrive: 포장 진입로
-
-       Y    Paved 
-       P    Partial Pavement
-       N    Dirt/Gravel
-
-RoofMatl: 지붕 소재
-
-       ClyTile  Clay or Tile
-       CompShg  Standard (Composite) Shingle
-       Membran  Membrane
-       Metal    Metal
-       Roll Roll
-       Tar&amp;Grv  Gravel &amp; Tar
-       WdShake  Wood Shakes
-       WdShngl  Wood Shingles
-
-RoofStyle: 지붕 형태
-
-       Flat Flat
-       Gable    Gable
-       Gambrel  Gabrel (Barn)
-       Hip  Hip
-       Mansard  Mansard
-       Shed Shed
-
-SalePrice: 주택의 판매 가격
-
-SaleCondition: 판매 조건
-
-       Normal   Normal Sale
-       Abnorml  Abnormal Sale -  trade, foreclosure, short sale
-       AdjLand  Adjoining Land Purchase
-       Alloca   Allocation - two linked properties with separate deeds, typically condo with a garage unit  
-       Family   Sale between family members
-       Partial  Home was not completed when last assessed (associated with New Homes)
-
-SaleType: 판매 유형
-
-       WD   Warranty Deed - Conventional
-       CWD  Warranty Deed - Cash
-       VWD  Warranty Deed - VA Loan
-       New  Home just constructed and sold
-       COD  Court Officer Deed/Estate
-       Con  Contract 15% Down payment regular terms
-       ConLw    Contract Low Down payment and low interest
-       ConLI    Contract Low Interest
-       ConLD    Contract Low Down
-       Oth  Other
-
-Street: 소유지에 대한 도로 접근 유형
-
-       Grvl Gravel  
-       Pave Paved
-
-TotRmsAbvGrd: 지상층 방 갯수 (화장실/욕실 제외)
-
-Utilities: 수도세, 전기세, 가스세 포함 여부
-
-       AllPub   All public Utilities (E,G,W,&amp; S)    
-       NoSewr   Electricity, Gas, and Water (Septic Tank)
-       NoSeWa   Electricity and Gas Only
-       ELO  Electricity only    
-
-YearBuilt: 건축 연도
-
-YearRemod/Add: 리모델링 / 추가 공사 연도 (아무런 리모델링이나 추가 시공이 없는 경우 건축연도와 동일)
-
-YrSold: 판매 연도 (YYYY)</code></pre>
+      <h1 id="Part-1---&#48516;&#47448;-(Classification):-&#54732;&#54792;-&#50668;&#48512;-&#50696;&#52769;&#54616;&#44592;-&#128657;">Part 1 - &#48516;&#47448; (Classification): &#54732;&#54792; &#50668;&#48512; &#50696;&#52769;&#54616;&#44592; &#128657;<a class="anchor-link" href="#Part-1---&#48516;&#47448;-(Classification):-&#54732;&#54792;-&#50668;&#48512;-&#50696;&#52769;&#54616;&#44592;-&#128657;">&#182;</a></h1><p>Part 1에선 대만의 이동식 헌혈 차량 헌혈자들의 정보를 담은 데이터셋을 다룹니다. 대만의 수혈 서비스 센터 (The Blood Transfusion Service Center)는 이동식 차량으로 대학교들을 돌면서 헌혈 행사를 진행, 수혈을 위한 혈액을 기부 받습니다.</p>
+<p>Part 1의 목표는 각 헌혈자의 정보를 활용해서 <strong>헌혈자가 2007년 3월에 헌혈을 했는지 여부</strong>를 예측하는 것입니다.</p>
+<p>헌혈 여부 및 공급 요구를 추적하고 예측하는 좋은 데이터 기반 시스템은 공급망 전체를 개선하여 더 많은 환자가 필요한 수혈을 받도록 할 수 있습니다.</p>
 
     </div>
   </div></div>
@@ -13705,13 +13295,24 @@ YrSold: 판매 연도 (YYYY)</code></pre>
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div><div class="inner_cell">
     <div class="input_area">
-      <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 데이터셋을 불러옵니다</span>
+      <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 분석에 필요한 라이브러리 및 데이터셋을 불러옵니다</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">homes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
-    <span class="s2">&quot;https://ds-lecture-data.s3.ap-northeast-2.amazonaws.com/ames_home/ames_home_subset.csv&quot;</span>
+<span class="n">donors</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
+    <span class="s2">&quot;https://archive.ics.uci.edu/ml/machine-learning-databases/blood-transfusion/transfusion.data&quot;</span>
 <span class="p">)</span>
-<span class="k">assert</span> <span class="n">homes</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">2904</span><span class="p">,</span> <span class="mi">47</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">donors</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">748</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># 데이터셋이 잘 로드 됐는지 확인하기 위해서 assert를 사용해 검증합니다.</span>
+
+<span class="c1"># 칼럼의 이름을 이해하기 쉽도록 변경합니다.</span>
+<span class="n">donors</span> <span class="o">=</span> <span class="n">donors</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">{</span>
+        <span class="s2">&quot;Recency (months)&quot;</span><span class="p">:</span> <span class="s2">&quot;months_since_last_donation&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Frequency (times)&quot;</span><span class="p">:</span> <span class="s2">&quot;number_of_donations&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Monetary (c.c. blood)&quot;</span><span class="p">:</span> <span class="s2">&quot;total_volume_donated&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Time (months)&quot;</span><span class="p">:</span> <span class="s2">&quot;months_since_first_donation&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;whether he/she donated blood in March 2007&quot;</span><span class="p">:</span> <span class="s2">&quot;made_donation_in_march_2007&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13723,7 +13324,7 @@ YrSold: 판매 연도 (YYYY)</code></pre>
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div><div class="inner_cell">
     <div class="input_area">
-      <div class=" highlight hl-ipython3"><pre><span></span><span class="n">homes</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+      <div class=" highlight hl-ipython3"><pre><span></span><span class="n">donors</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13759,153 +13360,56 @@ YrSold: 판매 연도 (YYYY)</code></pre>
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>1stFlrSF</th>
-      <th>BedroomAbvGr</th>
-      <th>BldgType</th>
-      <th>BsmtFullBath</th>
-      <th>BsmtHalfBath</th>
-      <th>CentralAir</th>
-      <th>Condition1</th>
-      <th>Condition2</th>
-      <th>Electrical</th>
-      <th>ExterCond</th>
-      <th>...</th>
-      <th>RoofStyle</th>
-      <th>SalePrice</th>
-      <th>SaleCondition</th>
-      <th>SaleType</th>
-      <th>Street</th>
-      <th>TotRmsAbvGrd</th>
-      <th>Utilities</th>
-      <th>YearBuilt</th>
-      <th>YearRemod/Add</th>
-      <th>YrSold</th>
+      <th>months_since_last_donation</th>
+      <th>number_of_donations</th>
+      <th>total_volume_donated</th>
+      <th>months_since_first_donation</th>
+      <th>made_donation_in_march_2007</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>1656</td>
-      <td>3</td>
-      <td>1Fam</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>Y</td>
-      <td>Norm</td>
-      <td>Norm</td>
-      <td>SBrkr</td>
-      <td>TA</td>
-      <td>...</td>
-      <td>Hip</td>
-      <td>215000</td>
-      <td>Normal</td>
-      <td>WD</td>
-      <td>Pave</td>
-      <td>7</td>
-      <td>AllPub</td>
-      <td>1960</td>
-      <td>1960</td>
-      <td>2010</td>
+      <td>2</td>
+      <td>50</td>
+      <td>12500</td>
+      <td>98</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>896</td>
-      <td>2</td>
-      <td>1Fam</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>Y</td>
-      <td>Feedr</td>
-      <td>Norm</td>
-      <td>SBrkr</td>
-      <td>TA</td>
-      <td>...</td>
-      <td>Gable</td>
-      <td>105000</td>
-      <td>Normal</td>
-      <td>WD</td>
-      <td>Pave</td>
-      <td>5</td>
-      <td>AllPub</td>
-      <td>1961</td>
-      <td>1961</td>
-      <td>2010</td>
+      <td>0</td>
+      <td>13</td>
+      <td>3250</td>
+      <td>28</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>1329</td>
-      <td>3</td>
-      <td>1Fam</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>Y</td>
-      <td>Norm</td>
-      <td>Norm</td>
-      <td>SBrkr</td>
-      <td>TA</td>
-      <td>...</td>
-      <td>Hip</td>
-      <td>172000</td>
-      <td>Normal</td>
-      <td>WD</td>
-      <td>Pave</td>
-      <td>6</td>
-      <td>AllPub</td>
-      <td>1958</td>
-      <td>1958</td>
-      <td>2010</td>
+      <td>1</td>
+      <td>16</td>
+      <td>4000</td>
+      <td>35</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>2110</td>
-      <td>3</td>
-      <td>1Fam</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>Y</td>
-      <td>Norm</td>
-      <td>Norm</td>
-      <td>SBrkr</td>
-      <td>TA</td>
-      <td>...</td>
-      <td>Hip</td>
-      <td>244000</td>
-      <td>Normal</td>
-      <td>WD</td>
-      <td>Pave</td>
-      <td>8</td>
-      <td>AllPub</td>
-      <td>1968</td>
-      <td>1968</td>
-      <td>2010</td>
+      <td>2</td>
+      <td>20</td>
+      <td>5000</td>
+      <td>45</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>928</td>
-      <td>3</td>
-      <td>1Fam</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>Y</td>
-      <td>Norm</td>
-      <td>Norm</td>
-      <td>SBrkr</td>
-      <td>TA</td>
-      <td>...</td>
-      <td>Gable</td>
-      <td>189900</td>
-      <td>Normal</td>
-      <td>WD</td>
-      <td>Pave</td>
-      <td>6</td>
-      <td>AllPub</td>
-      <td>1997</td>
-      <td>1998</td>
-      <td>2010</td>
+      <td>1</td>
+      <td>24</td>
+      <td>6000</td>
+      <td>77</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
-<p>5 rows × 47 columns</p>
 </div>
 </div>
 
@@ -13915,11 +13419,36 @@ YrSold: 판매 연도 (YYYY)</code></pre>
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+  <div class="prompt input_prompt">
+</div><div class="inner_cell">
+    <div class="text_cell_render border-box-sizing rendered_html">
+      <h2 id="&#52860;&#47100;-&#49444;&#47749;:">&#52860;&#47100; &#49444;&#47749;:<a class="anchor-link" href="#&#52860;&#47100;-&#49444;&#47749;:">&#182;</a></h2><ul>
+<li><strong>months_since_last_donation</strong>: 마지막으로 헌혈을 한 후에 지난 개월수</li>
+<li><strong>number_of_donations</strong>: 헌혈 횟수</li>
+<li><strong>total_volume_donated</strong>: 기부한 혈액 총량</li>
+<li><strong>months_since_first_donation</strong>: 첫 헌혈을 한 후에 지난 개월수</li>
+<li><strong>made_donation_in_march_2007</strong>: 2007년 헌혈을 했는지 여부 (target)</li>
+</ul>
+
+    </div>
+  </div></div>
+
+<div class="cell border-box-sizing text_cell rendered">
+  <div class="prompt input_prompt">
+</div><div class="inner_cell">
+    <div class="text_cell_render border-box-sizing rendered_html">
+      <p>데이터를 본다면 약 3/4에 해당하는 과반수가 2007년 3월에 헌혈을 하지 않았다는 것을 알 수 있습니다.<br>
+아래는 Baseline 모델의 정확도 점수 (accuracy score)를 나타낸 것입니다.</p>
+
+    </div>
+  </div></div>
+
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div><div class="inner_cell">
     <div class="input_area">
-      <div class=" highlight hl-ipython3"><pre><span></span><span class="n">homes</span><span class="o">.</span><span class="n">shape</span>
+      <div class=" highlight hl-ipython3"><pre><span></span><span class="n">donors</span><span class="p">[</span><span class="s2">&quot;made_donation_in_march_2007&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">(</span><span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -13938,92 +13467,11 @@ YrSold: 판매 연도 (YYYY)</code></pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>(2904, 47)</pre>
+<pre>0    0.762032
+1    0.237968
+Name: made_donation_in_march_2007, dtype: float64</pre>
 </div>
 
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div><div class="inner_cell">
-    <div class="input_area">
-      <div class=" highlight hl-ipython3"><pre><span></span><span class="n">homes</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
-</pre></div>
-
-    </div>
-  </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
-RangeIndex: 2904 entries, 0 to 2903
-Data columns (total 47 columns):
- #   Column         Non-Null Count  Dtype  
----  ------         --------------  -----  
- 0   1stFlrSF       2904 non-null   int64  
- 1   BedroomAbvGr   2904 non-null   int64  
- 2   BldgType       2904 non-null   object 
- 3   BsmtFullBath   2904 non-null   float64
- 4   BsmtHalfBath   2904 non-null   float64
- 5   CentralAir     2904 non-null   object 
- 6   Condition1     2904 non-null   object 
- 7   Condition2     2904 non-null   object 
- 8   Electrical     2904 non-null   object 
- 9   ExterCond      2904 non-null   object 
- 10  ExterQual      2904 non-null   object 
- 11  Exterior1st    2904 non-null   object 
- 12  Exterior2nd    2904 non-null   object 
- 13  Foundation     2904 non-null   object 
- 14  FullBath       2904 non-null   int64  
- 15  Functional     2904 non-null   object 
- 16  GrLivArea      2904 non-null   int64  
- 17  HalfBath       2904 non-null   int64  
- 18  Heating        2904 non-null   object 
- 19  HeatingQC      2904 non-null   object 
- 20  HouseStyle     2904 non-null   object 
- 21  KitchenAbvGr   2904 non-null   int64  
- 22  KitchenQual    2904 non-null   object 
- 23  LandContour    2904 non-null   object 
- 24  LandSlope      2904 non-null   object 
- 25  LotArea        2904 non-null   int64  
- 26  LotConfig      2904 non-null   object 
- 27  LotShape       2904 non-null   object 
- 28  MSSubClass     2904 non-null   int64  
- 29  MSZoning       2904 non-null   object 
- 30  MasVnrType     2904 non-null   object 
- 31  MoSold         2904 non-null   int64  
- 32  Neighborhood   2904 non-null   object 
- 33  OverallCond    2904 non-null   int64  
- 34  OverallQual    2904 non-null   int64  
- 35  PavedDrive     2904 non-null   object 
- 36  RoofMatl       2904 non-null   object 
- 37  RoofStyle      2904 non-null   object 
- 38  SalePrice      2904 non-null   int64  
- 39  SaleCondition  2904 non-null   object 
- 40  SaleType       2904 non-null   object 
- 41  Street         2904 non-null   object 
- 42  TotRmsAbvGrd   2904 non-null   int64  
- 43  Utilities      2904 non-null   object 
- 44  YearBuilt      2904 non-null   int64  
- 45  YearRemod/Add  2904 non-null   int64  
- 46  YrSold         2904 non-null   int64  
-dtypes: float64(2), int64(16), object(29)
-memory usage: 1.0+ MB
-</pre>
-</div>
 </div>
 
 </div>
@@ -14034,39 +13482,115 @@ memory usage: 1.0+ MB
   <div class="prompt input_prompt">
 </div><div class="inner_cell">
     <div class="text_cell_render border-box-sizing rendered_html">
-      <h2 id="2.1-Baseline-&#54217;&#44032;&#51648;&#54364;&#47484;-&#44228;&#49328;&#54616;&#45716;-calculate_baseline_score-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">2.1 Baseline &#54217;&#44032;&#51648;&#54364;&#47484; &#44228;&#49328;&#54616;&#45716; <code>calculate_baseline_score</code> &#54632;&#49688;&#47484; &#51089;&#49457;&#54616;&#49464;&#50836;.<a class="anchor-link" href="#2.1-Baseline-&#54217;&#44032;&#51648;&#54364;&#47484;-&#44228;&#49328;&#54616;&#45716;-calculate_baseline_score-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">&#182;</a></h2><p>평균 baseline의 $MAE$ (Mean Absolute Error)와 $R^2$ 점수를 계산하는 <code>calculate_baseline_score</code> 함수를 작성하세요(별도로 학습과 평가 데이터를 나누지 않아도 됩니다).</p>
+      <h2 id="1.1-&#45936;&#51060;&#53552;&#47484;-feature-(X),-label(y)&#47196;-&#48516;&#54624;&#54616;&#44256;-&#45936;&#51060;&#53552;&#47484;-train/test-&#49483;&#51004;&#47196;-&#45208;&#45572;&#45716;-divide_donors_data_and_split&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;-(scikit-learn-&#54876;&#50857;).">1.1 &#45936;&#51060;&#53552;&#47484; feature (X), label(y)&#47196; &#48516;&#54624;&#54616;&#44256; &#45936;&#51060;&#53552;&#47484; train/test &#49483;&#51004;&#47196; &#45208;&#45572;&#45716; <code>divide_donors_data_and_split</code>&#54632;&#49688;&#47484; &#51089;&#49457;&#54616;&#49464;&#50836; (scikit-learn &#54876;&#50857;).<a class="anchor-link" href="#1.1-&#45936;&#51060;&#53552;&#47484;-feature-(X),-label(y)&#47196;-&#48516;&#54624;&#54616;&#44256;-&#45936;&#51060;&#53552;&#47484;-train/test-&#49483;&#51004;&#47196;-&#45208;&#45572;&#45716;-divide_donors_data_and_split&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;-(scikit-learn-&#54876;&#50857;).">&#182;</a></h2><ul>
+<li>donors dataframe을 독립변수 dataframe과 종속변수 series로 나눠 주세요<ul>
+<li>종속변수 외 나머지 변수는 모두 독립변수로 간주하세요</li>
+</ul>
+</li>
+<li>sklearn train_test_split 함수를 사용해 Train / Test 비율을 3:1로 나눠 주세요. random_state는 42를 사용하세요.</li>
+</ul>
 
     </div>
   </div></div>
 
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div><div class="panel panel-primary nbgrader_cell">
+    <a name="comment-1-1"></a><div class="panel-heading"><span class="nbgrader-label">Student's answer</span><span class="pull-right"><a href="#top">(Top)</a></span></div>
+    <div class="panel-body">
+      <div class="input_area">
+        <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+
+<span class="k">def</span> <span class="nf">divide_donors_data_and_split</span><span class="p">(</span><span class="n">donors</span><span class="p">):</span>
+    <span class="c1"># YOUR CODE HERE</span>
+    
+    <span class="n">target</span> <span class="o">=</span> <span class="s1">&#39;made_donation_in_march_2007&#39;</span>
+
+    <span class="n">train</span><span class="p">,</span> <span class="n">test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">donors</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
+
+    <span class="n">X_train</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">target</span><span class="p">)</span>
+    <span class="n">y_train</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="n">target</span><span class="p">]</span>
+    <span class="n">X_test</span> <span class="o">=</span> <span class="n">test</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">target</span><span class="p">)</span>
+    <span class="n">y_test</span> <span class="o">=</span> <span class="n">test</span><span class="p">[</span><span class="n">target</span><span class="p">]</span>
+
+    <span class="c1"># YOUR CODE ENDS HERE</span>
+    
+    <span class="k">return</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span>
+</pre></div>
+
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="comment-2-1"></a><div class="panel-heading"><span class="nbgrader-label">Student's answer</span><span class="pull-right"><a href="#top">(Top)</a></span></div>
+    <a name="1-1_test"></a><div class="panel-heading"><span class="nbgrader-label">Grade cell: <code>1-1_test</code></span>
+  <span class="pull-right">
+      Score: 0.5 / 0.5 <a href="#top">(Top)</a>
+  </span></div>
     <div class="panel-body">
       <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span><span class="p">,</span> <span class="n">r2_score</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+        <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">divide_donors_data_and_split</span><span class="p">(</span><span class="n">donors</span><span class="p">)</span>
+<span class="c1">### BEGIN HIDDEN TESTS</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
 
 
-<span class="k">def</span> <span class="nf">calculate_baseline_score</span><span class="p">(</span><span class="n">homes</span><span class="p">):</span>
-    <span class="n">mae</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
-    <span class="n">r2</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="k">def</span> <span class="nf">sol_divide_donors_data_and_split</span><span class="p">(</span><span class="n">donors</span><span class="p">):</span>
+    <span class="n">features</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s2">&quot;months_since_last_donation&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;number_of_donations&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;total_volume_donated&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;months_since_first_donation&quot;</span><span class="p">,</span>
+    <span class="p">]</span>
+    <span class="n">target</span> <span class="o">=</span> <span class="s2">&quot;made_donation_in_march_2007&quot;</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="n">donors</span><span class="p">[</span><span class="n">features</span><span class="p">]</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">donors</span><span class="p">[</span><span class="n">target</span><span class="p">]</span>
 
-    <span class="c1"># YOUR CODE HERE</span>
+    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+        <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">train_size</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span>
+    <span class="p">)</span>
 
-    <span class="n">target</span> <span class="o">=</span> <span class="s1">&#39;SalePrice&#39;</span>
+    <span class="k">return</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span>
 
-    <span class="n">y_train</span> <span class="o">=</span> <span class="n">homes</span><span class="p">[</span><span class="n">target</span><span class="p">]</span>
-    <span class="n">predict</span> <span class="o">=</span> <span class="n">y_train</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-    <span class="n">y_pred</span> <span class="o">=</span> <span class="p">[</span><span class="n">predict</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_train</span><span class="p">)</span>
 
-    <span class="n">mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-    <span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+<span class="n">_Xs</span> <span class="o">=</span> <span class="p">[</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">]</span>
+<span class="n">_ys</span> <span class="o">=</span> <span class="p">[</span><span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">]</span>
 
-    <span class="c1"># YOUR CODE ENDS HERE</span>
-    
-    <span class="k">return</span> <span class="n">mae</span><span class="p">,</span> <span class="n">r2</span>
+<span class="n">_a</span><span class="p">,</span> <span class="n">_b</span><span class="p">,</span> <span class="n">_c</span><span class="p">,</span> <span class="n">_d</span> <span class="o">=</span> <span class="n">sol_divide_donors_data_and_split</span><span class="p">(</span><span class="n">donors</span><span class="p">)</span>
+<span class="n">__Xs</span> <span class="o">=</span> <span class="p">[</span><span class="n">_a</span><span class="p">,</span> <span class="n">_b</span><span class="p">]</span>
+<span class="n">__ys</span> <span class="o">=</span> <span class="p">[</span><span class="n">_c</span><span class="p">,</span> <span class="n">_d</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">_y</span><span class="p">,</span> <span class="n">__y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">_ys</span><span class="p">,</span> <span class="n">__ys</span><span class="p">):</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_y</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="p">{</span><span class="s2">&quot;made_donation_in_march_2007&quot;</span><span class="p">}</span> <span class="o">==</span> <span class="nb">set</span><span class="p">(</span><span class="n">_y</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+        <span class="n">_y</span> <span class="o">=</span> <span class="n">_y</span><span class="p">[</span><span class="s2">&quot;made_donation_in_march_2007&quot;</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_y</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">)</span>
+        <span class="k">assert</span> <span class="s2">&quot;made_donation_in_march_2007&quot;</span> <span class="o">==</span> <span class="n">_y</span><span class="o">.</span><span class="n">name</span>
+    <span class="k">assert</span> <span class="n">_y</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="n">__y</span><span class="o">.</span><span class="n">shape</span>
+    <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="n">_y</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span> <span class="o">==</span> <span class="n">__y</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">())</span>
+
+<span class="k">for</span> <span class="n">_X</span><span class="p">,</span> <span class="n">__X</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">_Xs</span><span class="p">,</span> <span class="n">__Xs</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="nb">set</span><span class="p">(</span>
+        <span class="p">[</span>
+            <span class="s2">&quot;months_since_last_donation&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;number_of_donations&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;total_volume_donated&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;months_since_first_donation&quot;</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">)</span> <span class="o">==</span> <span class="nb">set</span><span class="p">(</span><span class="n">_X</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">_X</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="n">__X</span><span class="o">.</span><span class="n">shape</span>
+    <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span>
+        <span class="n">_X</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;months_since_last_donation&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()[</span><span class="n">_X</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+        <span class="o">==</span> <span class="n">__X</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;months_since_last_donation&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()[</span><span class="n">_X</span><span class="o">.</span><span class="n">columns</span><span class="p">]</span>
+    <span class="p">)</span>
+
+<span class="c1">### END HIDDEN TESTS</span>
 </pre></div>
 
       </div>
@@ -14076,47 +13600,34 @@ memory usage: 1.0+ MB
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+  <div class="prompt input_prompt">
+</div><div class="inner_cell">
+    <div class="text_cell_render border-box-sizing rendered_html">
+      <h2 id="1.2-Logistic-regression-&#47784;&#45944;&#51012;-&#54617;&#49845;-(fit)&#54616;&#44256;-&#54617;&#49845;&#46108;-&#47784;&#45944;&#44284;-test-accuracy&#47484;-&#48152;&#54872;&#54616;&#45716;-fit_logistic_regression&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">1.2 Logistic regression &#47784;&#45944;&#51012; &#54617;&#49845; (fit)&#54616;&#44256; &#54617;&#49845;&#46108; &#47784;&#45944;&#44284; test accuracy&#47484; &#48152;&#54872;&#54616;&#45716; <code>fit_logistic_regression</code>&#54632;&#49688;&#47484; &#51089;&#49457;&#54616;&#49464;&#50836;.<a class="anchor-link" href="#1.2-Logistic-regression-&#47784;&#45944;&#51012;-&#54617;&#49845;-(fit)&#54616;&#44256;-&#54617;&#49845;&#46108;-&#47784;&#45944;&#44284;-test-accuracy&#47484;-&#48152;&#54872;&#54616;&#45716;-fit_logistic_regression&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">&#182;</a></h2>
+    </div>
+  </div></div>
+
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="2-1_test"></a><div class="panel-heading"><span class="nbgrader-label">Grade cell: <code>2-1_test</code></span>
-  <span class="pull-right">
-      Score: 1.0 / 1.0 <a href="#top">(Top)</a>
-  </span></div>
+    <a name="comment-1-2"></a><div class="panel-heading"><span class="nbgrader-label">Student's answer</span><span class="pull-right"><a href="#top">(Top)</a></span></div>
     <div class="panel-body">
       <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="n">mae</span><span class="p">,</span> <span class="n">r2</span> <span class="o">=</span> <span class="n">calculate_baseline_score</span><span class="p">(</span><span class="n">homes</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MAE: </span><span class="si">{</span><span class="n">mae</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">, R^2: </span><span class="si">{</span><span class="n">r2</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_error</span><span class="p">,</span> <span class="n">r2_score</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+        <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
 
+<span class="k">def</span> <span class="nf">fit_logistic_regression</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">):</span>
+    <span class="n">logistic</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">()</span>
+    <span class="n">test_accuracy</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="k">def</span> <span class="nf">sol_calculate_baseline_score</span><span class="p">(</span><span class="n">homes</span><span class="p">):</span>
-    <span class="n">mae</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s2">&quot;inf&quot;</span><span class="p">)</span>
-    <span class="n">r2</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-
-    <span class="c1"># 1. calculate Baseline</span>
-    <span class="n">baseline</span> <span class="o">=</span> <span class="n">homes</span><span class="p">[</span><span class="s2">&quot;SalePrice&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-
-    <span class="c1"># 2. calculate MAE</span>
-    <span class="n">mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">homes</span><span class="p">[</span><span class="s2">&quot;SalePrice&quot;</span><span class="p">],</span> <span class="p">[</span><span class="n">baseline</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">homes</span><span class="p">))</span>
-
-    <span class="c1"># 3. calculate R2</span>
-    <span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">homes</span><span class="p">[</span><span class="s2">&quot;SalePrice&quot;</span><span class="p">],</span> <span class="p">[</span><span class="n">baseline</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">homes</span><span class="p">))</span>
-
-    <span class="k">return</span> <span class="n">mae</span><span class="p">,</span> <span class="n">r2</span>
-
-
-<span class="k">assert</span> <span class="nb">all</span><span class="p">(</span>
-    <span class="nb">list</span><span class="p">(</span>
-        <span class="nb">map</span><span class="p">(</span>
-            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;=</span> <span class="mf">1e-6</span><span class="p">,</span>
-            <span class="nb">zip</span><span class="p">(</span><span class="n">calculate_baseline_score</span><span class="p">(</span><span class="n">homes</span><span class="p">),</span> <span class="n">sol_calculate_baseline_score</span><span class="p">(</span><span class="n">homes</span><span class="p">)),</span>
-        <span class="p">)</span>
-    <span class="p">)</span>
-<span class="p">)</span>
-<span class="c1">### END HIDDEN TESTS</span>
+    <span class="c1"># YOUR CODE HERE</span>
+    
+    <span class="n">logistic</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+    <span class="n">test_accuracy</span> <span class="o">=</span> <span class="n">logistic</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+    
+    <span class="c1"># YOUR CODE ENDS HERE</span>
+    
+    <span class="k">return</span> <span class="n">logistic</span><span class="p">,</span> <span class="n">test_accuracy</span>
 </pre></div>
 
       </div>
@@ -14125,107 +13636,20 @@ memory usage: 1.0+ MB
   </div>
 </div>
 
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>MAE: 58149.93, R^2: 0.00
-</pre>
 </div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-  <div class="prompt input_prompt">
-</div><div class="inner_cell">
-    <div class="text_cell_render border-box-sizing rendered_html">
-      <h2 id="2.2-&#45936;&#51060;&#53552;&#49483;&#51012;-&#50500;&#47000;&#51032;-&#44592;&#51456;&#51012;-&#49324;&#50857;&#54644;&#49436;-train/validation/test-&#49483;&#51004;&#47196;-&#45208;&#45572;&#45716;-split_home_data-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">2.2 &#45936;&#51060;&#53552;&#49483;&#51012; &#50500;&#47000;&#51032; &#44592;&#51456;&#51012; &#49324;&#50857;&#54644;&#49436; train/validation/test &#49483;&#51004;&#47196; &#45208;&#45572;&#45716; <code>split_home_data</code> &#54632;&#49688;&#47484; &#51089;&#49457;&#54616;&#49464;&#50836;.<a class="anchor-link" href="#2.2-&#45936;&#51060;&#53552;&#49483;&#51012;-&#50500;&#47000;&#51032;-&#44592;&#51456;&#51012;-&#49324;&#50857;&#54644;&#49436;-train/validation/test-&#49483;&#51004;&#47196;-&#45208;&#45572;&#45716;-split_home_data-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">&#182;</a></h2><ul>
-<li><p><strong>Train</strong>: 2006년부터 2008년까지 팔린 주택들 (1,920개)</p>
-</li>
-<li><p><strong>Validation</strong>: 2009년에 팔린 주택들. (644개)</p>
-</li>
-<li><p><strong>Test</strong>: 2010년에 팔린 주택들. (340개)</p>
-</li>
-</ul>
-
-    </div>
-  </div></div>
-
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="comment-2-2"></a><div class="panel-heading"><span class="nbgrader-label">Student's answer</span><span class="pull-right"><a href="#top">(Top)</a></span></div>
-    <div class="panel-body">
-      <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">split_home_data</span><span class="p">(</span><span class="n">homes</span><span class="p">):</span>
-    <span class="n">train</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="n">validation</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="n">test</span> <span class="o">=</span> <span class="kc">None</span>
-
-    <span class="c1"># YOUR CODE HERE</span>
-    
-    <span class="n">train</span> <span class="o">=</span> <span class="n">homes</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">homes</span><span class="p">[</span><span class="s1">&#39;YrSold&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">2006</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">homes</span><span class="p">[</span><span class="s1">&#39;YrSold&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mi">2008</span><span class="p">)]</span>
-
-    <span class="n">validation</span> <span class="o">=</span> <span class="n">homes</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">homes</span><span class="p">[</span><span class="s1">&#39;YrSold&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2009</span><span class="p">]</span>
-
-    <span class="n">test</span> <span class="o">=</span> <span class="n">homes</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">homes</span><span class="p">[</span><span class="s1">&#39;YrSold&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2010</span><span class="p">]</span>
-    
-    <span class="c1"># YOUR CODE ENDS HERE</span>
-    
-    <span class="k">return</span> <span class="n">train</span><span class="p">,</span> <span class="n">validation</span><span class="p">,</span> <span class="n">test</span>
-</pre></div>
-
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[9]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="2-2_test"></a><div class="panel-heading"><span class="nbgrader-label">Grade cell: <code>2-2_test</code></span>
+    <a name="1-2_test"></a><div class="panel-heading"><span class="nbgrader-label">Grade cell: <code>1-2_test</code></span>
   <span class="pull-right">
-      Score: 1.0 / 1.0 <a href="#top">(Top)</a>
+      Score: 1.5 / 1.5 <a href="#top">(Top)</a>
   </span></div>
     <div class="panel-body">
       <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="p">,</span> <span class="n">validation</span><span class="p">,</span> <span class="n">test</span> <span class="o">=</span> <span class="n">split_home_data</span><span class="p">(</span><span class="n">homes</span><span class="o">.</span><span class="n">copy</span><span class="p">())</span>
+        <div class=" highlight hl-ipython3"><pre><span></span><span class="n">logistic</span><span class="p">,</span> <span class="n">test_accuracy</span> <span class="o">=</span> <span class="n">fit_logistic_regression</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
 <span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="k">def</span> <span class="nf">sol_split_home_data</span><span class="p">(</span><span class="n">homes</span><span class="p">):</span>
-    <span class="n">train</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="n">validation</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="n">test</span> <span class="o">=</span> <span class="kc">None</span>
-
-    <span class="n">mask_train</span> <span class="o">=</span> <span class="n">homes</span><span class="p">[</span><span class="s2">&quot;YrSold&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">2009</span>
-    <span class="n">mask_val</span> <span class="o">=</span> <span class="n">homes</span><span class="p">[</span><span class="s2">&quot;YrSold&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2009</span>
-    <span class="n">mask_test</span> <span class="o">=</span> <span class="n">homes</span><span class="p">[</span><span class="s2">&quot;YrSold&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2010</span>
-
-    <span class="n">train</span> <span class="o">=</span> <span class="n">homes</span><span class="p">[</span><span class="n">mask_train</span><span class="p">]</span>
-    <span class="n">validation</span> <span class="o">=</span> <span class="n">homes</span><span class="p">[</span><span class="n">mask_val</span><span class="p">]</span>
-    <span class="n">test</span> <span class="o">=</span> <span class="n">homes</span><span class="p">[</span><span class="n">mask_test</span><span class="p">]</span>
-
-    <span class="k">return</span> <span class="n">train</span><span class="p">,</span> <span class="n">validation</span><span class="p">,</span> <span class="n">test</span>
-
-
-<span class="k">assert</span> <span class="nb">all</span><span class="p">(</span>
-    <span class="nb">list</span><span class="p">(</span>
-        <span class="nb">map</span><span class="p">(</span>
-            <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span>
-            <span class="nb">zip</span><span class="p">(</span><span class="n">split_home_data</span><span class="p">(</span><span class="n">homes</span><span class="o">.</span><span class="n">copy</span><span class="p">()),</span> <span class="n">sol_split_home_data</span><span class="p">(</span><span class="n">homes</span><span class="o">.</span><span class="n">copy</span><span class="p">())),</span>
-        <span class="p">)</span>
-    <span class="p">)</span>
-<span class="p">)</span>
+<span class="n">logistic</span><span class="p">,</span> <span class="n">test_accuracy</span> <span class="o">=</span> <span class="n">fit_logistic_regression</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">logistic</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span> <span class="o">==</span> <span class="n">test_accuracy</span>
 <span class="c1">### END HIDDEN TESTS</span>
 </pre></div>
 
@@ -14236,45 +13660,18 @@ memory usage: 1.0+ MB
 </div>
 
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[10]:</div><div class="inner_cell">
-    <div class="input_area">
-      <div class=" highlight hl-ipython3"><pre><span></span><span class="n">train</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">validation</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">test</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-
-    </div>
-  </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[10]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>((1920, 47), (644, 47), (340, 47))</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
 <div class="cell border-box-sizing text_cell rendered">
   <div class="prompt input_prompt">
 </div><div class="inner_cell">
     <div class="text_cell_render border-box-sizing rendered_html">
-      <h2 id="2.3-train-/-validation-/-test-&#49483;&#51012;-features(X)&#50752;-target(y)&#51004;&#47196;-&#44033;&#44033;-&#45208;&#45572;&#45716;-divide_home_data-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">2.3 train / validation / test &#49483;&#51012; features(X)&#50752; target(y)&#51004;&#47196; &#44033;&#44033; &#45208;&#45572;&#45716; <code>divide_home_data</code> &#54632;&#49688;&#47484; &#51089;&#49457;&#54616;&#49464;&#50836;.<a class="anchor-link" href="#2.3-train-/-validation-/-test-&#49483;&#51012;-features(X)&#50752;-target(y)&#51004;&#47196;-&#44033;&#44033;-&#45208;&#45572;&#45716;-divide_home_data-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">&#182;</a></h2><ul>
-<li>특성에는 최소 두 개의 수치형 (numeric) 특성과 범주형 (categorical) 특성을 포함하세요. </li>
-<li>위의 조건을 만족한다면 추가 feature를 선택하는 것에 대한 제한은 없습니다.</li>
+      <h2 id="1.3-&#48516;&#47448;-&#54217;&#44032;-&#51648;&#54364;-(classification-metric)-&#54869;&#51064;:-&#51221;&#54869;&#46020;-(accuracy)">1.3 &#48516;&#47448; &#54217;&#44032; &#51648;&#54364; (classification metric) &#54869;&#51064;: &#51221;&#54869;&#46020; (accuracy)<a class="anchor-link" href="#1.3-&#48516;&#47448;-&#54217;&#44032;-&#51648;&#54364;-(classification-metric)-&#54869;&#51064;:-&#51221;&#54869;&#46020;-(accuracy)">&#182;</a></h2><ul>
+<li><p>아래 셀을 실행하여 테스트셋을 사용했을 때 분류 모델의 정확도(accuracy score)를 확인해 보세요.</p>
+</li>
+<li><p>모델의 성능이 베이스라인보다 안좋더라도 걱정하지 마세요.</p>
+<ul>
+<li>accuracy 대신 recall을 평가 지표 (metric)로 사용할 경우에 우리가 만든 모델이 베이스라인을 뛰어넘을 수 있습니다. 알맞은 평가 지표를 고르고 해석하는 법은 앞으로 계속 다룰 예정입니다.</li>
+</ul>
+</li>
 </ul>
 
     </div>
@@ -14282,428 +13679,12 @@ memory usage: 1.0+ MB
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[11]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="comment-2-3"></a><div class="panel-heading"><span class="nbgrader-label">Student's answer</span><span class="pull-right"><a href="#top">(Top)</a></span></div>
-    <div class="panel-body">
-      <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">divide_home_data</span><span class="p">(</span><span class="n">data</span><span class="p">):</span>
-    <span class="n">X</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="kc">None</span>
-
-    <span class="c1"># YOUR CODE HERE</span>
-    
-    <span class="n">target</span> <span class="o">=</span> <span class="s1">&#39;SalePrice&#39;</span>
-
-    <span class="n">X</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">target</span><span class="p">)</span>
-    <span class="n">X</span> <span class="o">=</span> <span class="n">X</span><span class="p">[[</span><span class="s1">&#39;OverallQual&#39;</span><span class="p">,</span> <span class="s1">&#39;OverallCond&#39;</span><span class="p">,</span> <span class="s1">&#39;Street&#39;</span><span class="p">,</span> <span class="s1">&#39;HouseStyle&#39;</span><span class="p">,</span> <span class="s1">&#39;GrLivArea&#39;</span><span class="p">,</span> <span class="s1">&#39;ExterCond&#39;</span><span class="p">,</span> <span class="s1">&#39;ExterQual&#39;</span><span class="p">,</span> <span class="s1">&#39;HeatingQC&#39;</span><span class="p">]]</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">target</span><span class="p">]</span>
-    
-    <span class="c1"># YOUR CODE ENDS HERE</span>
-
-    <span class="k">return</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span>
-</pre></div>
-
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="2-3_test"></a><div class="panel-heading"><span class="nbgrader-label">Grade cell: <code>2-3_test</code></span>
-  <span class="pull-right">
-      Score: 0.0 / 1.0 <a href="#top">(Top)</a>
-  </span></div>
-    <div class="panel-body">
-      <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span> <span class="o">=</span> <span class="n">divide_home_data</span><span class="p">(</span><span class="n">train</span><span class="p">)</span>
-<span class="n">X_val</span><span class="p">,</span> <span class="n">y_val</span> <span class="o">=</span> <span class="n">divide_home_data</span><span class="p">(</span><span class="n">validation</span><span class="p">)</span>
-<span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">divide_home_data</span><span class="p">(</span><span class="n">test</span><span class="p">)</span>
-<span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="n">_xtrain</span><span class="p">,</span> <span class="n">_ytrain</span> <span class="o">=</span> <span class="n">divide_home_data</span><span class="p">(</span><span class="n">train</span><span class="p">)</span>
-
-<span class="c1">## 1. Test Y</span>
-<span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_ytrain</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="n">_ytrain</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;SalePrice&quot;</span>
-<span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">_ytrain</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
-    <span class="k">assert</span> <span class="nb">set</span><span class="p">(</span><span class="n">_ytrain</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">==</span> <span class="nb">set</span><span class="p">([</span><span class="s2">&quot;SalePrice&quot;</span><span class="p">])</span>
-
-<span class="c1">## 2. Test X</span>
-<span class="n">num_col</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;1stFlrSF&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;BedroomAbvGr&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;BsmtFullBath&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;BsmtHalfBath&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;FullBath&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;GrLivArea&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;HalfBath&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;KitchenAbvGr&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;LotArea&quot;</span><span class="p">,</span>
-    <span class="c1">#    &#39;MSSubClass&#39;,</span>
-    <span class="c1">#    &#39;MoSold&#39;,</span>
-    <span class="c1">#    &#39;OverallCond&#39;,</span>
-    <span class="c1">#    &#39;OverallQual&#39;,</span>
-    <span class="s2">&quot;SalePrice&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;TotRmsAbvGrd&quot;</span><span class="p">,</span>
-    <span class="c1">#    &#39;YearBuilt&#39;,</span>
-    <span class="c1">#    &#39;YearRemod/Add&#39;,</span>
-    <span class="c1">#    &#39;YrSold&#39;</span>
-<span class="p">}</span>
-<span class="n">cat_col</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">-</span> <span class="n">num_col</span>
-
-<span class="n">_xtraincol</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">_xtrain</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
-<span class="k">assert</span> <span class="s2">&quot;SalePrice&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_xtraincol</span>
-<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">_xtraincol</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">num_col</span><span class="p">))</span> <span class="o">&gt;=</span> <span class="mi">2</span>
-<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">_xtraincol</span><span class="o">.</span><span class="n">intersection</span><span class="p">(</span><span class="n">cat_col</span><span class="p">))</span> <span class="o">&gt;=</span> <span class="mi">2</span>
-
-<span class="c1">### END HIDDEN TESTS</span>
-</pre></div>
-
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AssertionError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-12-cc4f5dea7b51&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">     36</span> _xtraincol <span class="ansi-blue-fg">=</span> set<span class="ansi-blue-fg">(</span>_xtrain<span class="ansi-blue-fg">.</span>columns<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">     37</span> <span class="ansi-green-fg">assert</span> <span class="ansi-blue-fg">&#34;SalePrice&#34;</span> <span class="ansi-green-fg">not</span> <span class="ansi-green-fg">in</span> _xtraincol
-<span class="ansi-green-fg">---&gt; 38</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">assert</span> len<span class="ansi-blue-fg">(</span>_xtraincol<span class="ansi-blue-fg">.</span>intersection<span class="ansi-blue-fg">(</span>num_col<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">&gt;=</span> <span class="ansi-cyan-fg">2</span>
-<span class="ansi-green-intense-fg ansi-bold">     39</span> <span class="ansi-green-fg">assert</span> len<span class="ansi-blue-fg">(</span>_xtraincol<span class="ansi-blue-fg">.</span>intersection<span class="ansi-blue-fg">(</span>cat_col<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span> <span class="ansi-blue-fg">&gt;=</span> <span class="ansi-cyan-fg">2</span>
-<span class="ansi-green-intense-fg ansi-bold">     40</span> 
-
-<span class="ansi-red-fg">AssertionError</span>: </pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div><div class="inner_cell">
+<div class="prompt input_prompt">In&nbsp;[9]:</div><div class="inner_cell">
     <div class="input_area">
-      <div class=" highlight hl-ipython3"><pre><span></span><span class="n">X_train</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+      <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;test accuracy: &quot;</span><span class="p">,</span> <span class="n">test_accuracy</span><span class="p">)</span>
 </pre></div>
 
     </div>
-  </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[13]:</div>
-
-
-
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>OverallQual</th>
-      <th>OverallCond</th>
-      <th>Street</th>
-      <th>HouseStyle</th>
-      <th>GrLivArea</th>
-      <th>ExterCond</th>
-      <th>ExterQual</th>
-      <th>HeatingQC</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>984</th>
-      <td>6</td>
-      <td>8</td>
-      <td>Pave</td>
-      <td>1Story</td>
-      <td>1414</td>
-      <td>TA</td>
-      <td>Ex</td>
-      <td>Ex</td>
-    </tr>
-    <tr>
-      <th>985</th>
-      <td>6</td>
-      <td>7</td>
-      <td>Pave</td>
-      <td>1Story</td>
-      <td>2117</td>
-      <td>TA</td>
-      <td>TA</td>
-      <td>Ex</td>
-    </tr>
-    <tr>
-      <th>986</th>
-      <td>6</td>
-      <td>5</td>
-      <td>Pave</td>
-      <td>2Story</td>
-      <td>2112</td>
-      <td>TA</td>
-      <td>TA</td>
-      <td>TA</td>
-    </tr>
-    <tr>
-      <th>987</th>
-      <td>6</td>
-      <td>5</td>
-      <td>Pave</td>
-      <td>2Story</td>
-      <td>1604</td>
-      <td>TA</td>
-      <td>TA</td>
-      <td>Ex</td>
-    </tr>
-    <tr>
-      <th>988</th>
-      <td>6</td>
-      <td>5</td>
-      <td>Pave</td>
-      <td>2Story</td>
-      <td>1470</td>
-      <td>TA</td>
-      <td>TA</td>
-      <td>Gd</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-  <div class="prompt input_prompt">
-</div><div class="inner_cell">
-    <div class="text_cell_render border-box-sizing rendered_html">
-      <h2 id="2.4-One-hot-encoding&#51012;-&#52852;&#53580;&#44256;&#47532;&#54805;-&#53945;&#49457;(feature)&#50640;-&#49688;&#54665;&#54616;&#45716;-encoding_one_hot-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;">2.4 One-hot encoding&#51012; &#52852;&#53580;&#44256;&#47532;&#54805; &#53945;&#49457;(feature)&#50640; &#49688;&#54665;&#54616;&#45716; <code>encoding_one_hot</code> &#54632;&#49688;&#47484; &#51089;&#49457;&#54616;&#49464;&#50836;<a class="anchor-link" href="#2.4-One-hot-encoding&#51012;-&#52852;&#53580;&#44256;&#47532;&#54805;-&#53945;&#49457;(feature)&#50640;-&#49688;&#54665;&#54616;&#45716;-encoding_one_hot-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;">&#182;</a></h2>
-    </div>
-  </div></div>
-
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="comment-2-4"></a><div class="panel-heading"><span class="nbgrader-label">Student's answer</span><span class="pull-right"><a href="#top">(Top)</a></span></div>
-    <div class="panel-body">
-      <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">category_encoders</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
-
-
-<span class="k">def</span> <span class="nf">encoding_one_hot</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_val</span><span class="p">,</span> <span class="n">X_test</span><span class="p">):</span>
-    <span class="n">encoder</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># OneHotEncoder 인스턴스를 생성하세요</span>
-    <span class="n">X_train_encoded</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="n">X_val_encoded</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="n">X_test_encoded</span> <span class="o">=</span> <span class="kc">None</span>
-
-    <span class="c1"># YOUR CODE HERE</span>
-    
-    <span class="n">encoder</span> <span class="o">=</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">use_cat_names</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
-    <span class="n">X_train_encoded</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
-    <span class="n">X_val_encoded</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_val</span><span class="p">)</span>
-    <span class="n">X_test_encoded</span> <span class="o">=</span> <span class="n">encoder</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
-    
-    <span class="c1"># YOUR CODE ENDS HERE</span>
-    
-    <span class="k">return</span> <span class="n">encoder</span><span class="p">,</span> <span class="n">X_train_encoded</span><span class="p">,</span> <span class="n">X_val_encoded</span><span class="p">,</span> <span class="n">X_test_encoded</span>
-</pre></div>
-
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[15]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="2-4_test"></a><div class="panel-heading"><span class="nbgrader-label">Grade cell: <code>2-4_test</code></span>
-  <span class="pull-right">
-      Score: 1.0 / 1.0 <a href="#top">(Top)</a>
-  </span></div>
-    <div class="panel-body">
-      <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="n">encoder</span><span class="p">,</span> <span class="n">X_train_encoded</span><span class="p">,</span> <span class="n">X_val_encoded</span><span class="p">,</span> <span class="n">X_test_encoded</span> <span class="o">=</span> <span class="n">encoding_one_hot</span><span class="p">(</span>
-    <span class="n">X_train</span><span class="p">,</span> <span class="n">X_val</span><span class="p">,</span> <span class="n">X_test</span>
-<span class="p">)</span>
-<span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="kn">from</span> <span class="nn">category_encoders</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
-<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
-
-
-<span class="n">_results</span> <span class="o">=</span> <span class="n">encoding_one_hot</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_val</span><span class="p">,</span> <span class="n">X_test</span><span class="p">)</span>
-<span class="n">_encoder_ref</span> <span class="o">=</span> <span class="n">deepcopy</span><span class="p">(</span><span class="n">_results</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
-<span class="n">_results_ref</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="n">_encoder_ref</span><span class="p">,</span>
-    <span class="n">_encoder_ref</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_train</span><span class="p">),</span>
-    <span class="n">_encoder_ref</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_val</span><span class="p">),</span>
-    <span class="n">_encoder_ref</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X_test</span><span class="p">),</span>
-<span class="p">]</span>
-
-<span class="c1">## 1. Test Outpupt</span>
-<span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">all</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">zip</span><span class="p">(</span><span class="n">_results</span><span class="p">[</span><span class="mi">1</span><span class="p">:],</span> <span class="n">_results_ref</span><span class="p">[</span><span class="mi">1</span><span class="p">:]))))</span>
-
-<span class="c1">## 2. Test no-fit-on-validation</span>
-<span class="n">dummy_train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;f&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">]})</span>
-<span class="n">dummy_val</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;f&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">]})</span>
-<span class="n">dummy_test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;f&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;e&quot;</span><span class="p">,</span> <span class="s2">&quot;f&quot;</span><span class="p">]})</span>
-<span class="n">_enc</span><span class="p">,</span> <span class="n">_dtre</span><span class="p">,</span> <span class="n">_dvae</span><span class="p">,</span> <span class="n">_dtee</span> <span class="o">=</span> <span class="n">encoding_one_hot</span><span class="p">(</span><span class="n">dummy_train</span><span class="p">,</span> <span class="n">dummy_val</span><span class="p">,</span> <span class="n">dummy_test</span><span class="p">)</span>
-
-<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">_enc</span><span class="o">.</span><span class="n">mapping</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;mapping&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">==</span> <span class="mi">3</span>
-
-<span class="c1">### END HIDDEN TESTS</span>
-</pre></div>
-
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-  <div class="prompt input_prompt">
-</div><div class="inner_cell">
-    <div class="text_cell_render border-box-sizing rendered_html">
-      <h2 id="2.5-Ridge-regression-&#47784;&#45944;&#51012;-&#54617;&#49845;-(fit)&#54616;&#44256;-&#54617;&#49845;&#46108;-&#47784;&#45944;&#44284;-validation-score(MAE,-$R^2$)&#51012;-&#48152;&#54872;&#54616;&#45716;-fit_ridge_regression&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">2.5 Ridge regression &#47784;&#45944;&#51012; &#54617;&#49845; (fit)&#54616;&#44256; &#54617;&#49845;&#46108; &#47784;&#45944;&#44284; validation score(MAE, $R^2$)&#51012; &#48152;&#54872;&#54616;&#45716; <code>fit_ridge_regression</code>&#54632;&#49688;&#47484; &#51089;&#49457;&#54616;&#49464;&#50836;.<a class="anchor-link" href="#2.5-Ridge-regression-&#47784;&#45944;&#51012;-&#54617;&#49845;-(fit)&#54616;&#44256;-&#54617;&#49845;&#46108;-&#47784;&#45944;&#44284;-validation-score(MAE,-$R^2$)&#51012;-&#48152;&#54872;&#54616;&#45716;-fit_ridge_regression&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">&#182;</a></h2>
-    </div>
-  </div></div>
-
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="comment-2-5"></a><div class="panel-heading"><span class="nbgrader-label">Student's answer</span><span class="pull-right"><a href="#top">(Top)</a></span></div>
-    <div class="panel-body">
-      <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">RidgeCV</span>
-
-<span class="k">def</span> <span class="nf">fit_ridge_regression</span><span class="p">(</span><span class="n">X_train_encoded</span><span class="p">,</span> <span class="n">X_val_encoded</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_val</span><span class="p">):</span>
-    <span class="n">ridge</span> <span class="o">=</span> <span class="n">RidgeCV</span><span class="p">(</span><span class="n">alphas</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">),</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-    <span class="n">mae</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
-    <span class="n">r2</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-
-    <span class="c1"># YOUR CODE HERE</span>
-    
-    <span class="n">ridge</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_encoded</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-
-    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">ridge</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_val_encoded</span><span class="p">)</span>   
-
-    <span class="n">mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_val</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-    <span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_val</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-    
-    <span class="c1"># YOUR CODE ENDS HERE</span>
-    
-    <span class="k">return</span> <span class="n">ridge</span><span class="p">,</span> <span class="n">mae</span><span class="p">,</span> <span class="n">r2</span>
-</pre></div>
-
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[17]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="2-5_test"></a><div class="panel-heading"><span class="nbgrader-label">Grade cell: <code>2-5_test</code></span>
-  <span class="pull-right">
-      Score: 2.0 / 2.0 <a href="#top">(Top)</a>
-  </span></div>
-    <div class="panel-body">
-      <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
-
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
-<span class="c1">### END HIDDEN TESTS</span>
-<span class="n">ridge</span><span class="p">,</span> <span class="n">mae</span><span class="p">,</span> <span class="n">r2</span> <span class="o">=</span> <span class="n">fit_ridge_regression</span><span class="p">(</span><span class="n">X_train_encoded</span><span class="p">,</span> <span class="n">X_val_encoded</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_val</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;alpha: </span><span class="si">{</span><span class="n">ridge</span><span class="o">.</span><span class="n">alpha_</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cv best score: </span><span class="si">{</span><span class="n">ridge</span><span class="o">.</span><span class="n">best_score_</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ridge Regression 검증데이터 MAE: &quot;</span><span class="p">,</span> <span class="n">mae</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ridge Regression 검증데이터 R2: &quot;</span><span class="p">,</span> <span class="n">r2</span><span class="p">)</span>  <span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="kn">import</span> <span class="nn">warnings</span>
-
-<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s2">&quot;ignore&quot;</span><span class="p">)</span>
-
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">RidgeCV</span>
-
-
-<span class="k">def</span> <span class="nf">sol_fit_ridge_regression</span><span class="p">(</span><span class="n">X_train_encoded</span><span class="p">,</span> <span class="n">X_val_encoded</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_val</span><span class="p">):</span>
-    <span class="n">ridge</span> <span class="o">=</span> <span class="n">RidgeCV</span><span class="p">(</span><span class="n">alphas</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.01</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">),</span> <span class="n">normalize</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-
-    <span class="n">ridge</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_encoded</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
-    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">ridge</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_val_encoded</span><span class="p">)</span>
-    <span class="n">mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_val</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-    <span class="n">r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_val</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">ridge</span><span class="p">,</span> <span class="n">mae</span><span class="p">,</span> <span class="n">r2</span>
-
-
-<span class="n">_rdge</span><span class="p">,</span> <span class="n">_mae</span><span class="p">,</span> <span class="n">_r2</span> <span class="o">=</span> <span class="n">fit_ridge_regression</span><span class="p">(</span><span class="n">X_train_encoded</span><span class="p">,</span> <span class="n">X_val_encoded</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_val</span><span class="p">)</span>
-<span class="n">_rdge_ref</span><span class="p">,</span> <span class="n">_mae_ref</span><span class="p">,</span> <span class="n">_r2_ref</span> <span class="o">=</span> <span class="n">sol_fit_ridge_regression</span><span class="p">(</span>
-    <span class="n">X_train_encoded</span><span class="p">,</span> <span class="n">X_val_encoded</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_val</span>
-<span class="p">)</span>
-
-<span class="k">assert</span> <span class="nb">all</span><span class="p">(</span>
-    <span class="p">[</span>
-        <span class="nb">abs</span><span class="p">(</span><span class="n">u</span> <span class="o">-</span> <span class="n">r</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mf">1e-6</span>
-        <span class="k">for</span> <span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span>
-            <span class="p">[</span><span class="n">_rdge</span><span class="o">.</span><span class="n">alpha_</span><span class="p">,</span> <span class="n">_rdge</span><span class="o">.</span><span class="n">best_score_</span><span class="p">,</span> <span class="n">_mae</span><span class="p">,</span> <span class="n">_r2</span><span class="p">],</span>
-            <span class="p">[</span><span class="n">_rdge_ref</span><span class="o">.</span><span class="n">alpha_</span><span class="p">,</span> <span class="n">_rdge_ref</span><span class="o">.</span><span class="n">best_score_</span><span class="p">,</span> <span class="n">_mae_ref</span><span class="p">,</span> <span class="n">_r2_ref</span><span class="p">],</span>
-        <span class="p">)</span>
-    <span class="p">]</span>
-<span class="p">)</span>
-
-<span class="c1">### END HIDDEN TESTS</span>
-</pre></div>
-
-      </div>
-    </div>
-    
   </div>
 </div>
 
@@ -14717,129 +13698,7 @@ memory usage: 1.0+ MB
 
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>alpha: 0.03
-cv best score: 0.7662735779317271
-Ridge Regression 검증데이터 MAE:  23575.133737452667
-Ridge Regression 검증데이터 R2:  0.8310954379307939
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-  <div class="prompt input_prompt">
-</div><div class="inner_cell">
-    <div class="text_cell_render border-box-sizing rendered_html">
-      <h2 id="2.6-Test-&#49483;&#51012;-&#49324;&#50857;&#54644;-&#47784;&#45944;&#51032;-&#50696;&#52769;-&#49457;&#45733;(MAE,-$R^2$)&#47484;-&#44228;&#49328;&#54616;&#45716;-calcuate_score-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">2.6 Test &#49483;&#51012; &#49324;&#50857;&#54644; &#47784;&#45944;&#51032; &#50696;&#52769; &#49457;&#45733;(MAE, $R^2$)&#47484; &#44228;&#49328;&#54616;&#45716; <code>calcuate_score</code> &#54632;&#49688;&#47484; &#51089;&#49457;&#54616;&#49464;&#50836;.<a class="anchor-link" href="#2.6-Test-&#49483;&#51012;-&#49324;&#50857;&#54644;-&#47784;&#45944;&#51032;-&#50696;&#52769;-&#49457;&#45733;(MAE,-$R^2$)&#47484;-&#44228;&#49328;&#54616;&#45716;-calcuate_score-&#54632;&#49688;&#47484;-&#51089;&#49457;&#54616;&#49464;&#50836;.">&#182;</a></h2><ul>
-<li><code>calculate_score</code> 함수가 정상적으로 작동하면 기본점수를 얻습니다</li>
-<li>(도전과제) test_r2 &gt; 0.75를 만족하면 성능 점수를 얻습니다. <ul>
-<li>도전과제까지 수행해야 스챌 3점을 얻습니다. </li>
-<li>2.3으로 돌아가 다양한 특성 조합을 시도해 보세요. <ul>
-<li>각 특성이 무슨 의미를 갖는지 생각해 보세요. </li>
-<li>어떤 특성이 들어가면 성능이 더 오를까요? </li>
-<li>특성을 추가하면 추가할수록 성능이 좋아질까요?</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-    </div>
-  </div></div>
-
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[18]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="comment-2-6"></a><div class="panel-heading"><span class="nbgrader-label">Student's answer</span><span class="pull-right"><a href="#top">(Top)</a></span></div>
-    <div class="panel-body">
-      <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">calculate_score</span><span class="p">(</span><span class="n">ridge</span><span class="p">,</span> <span class="n">X_test_encoded</span><span class="p">,</span> <span class="n">y_test</span><span class="p">):</span>
-    <span class="n">test_mae</span> <span class="o">=</span> <span class="mi">0</span>
-    <span class="n">test_r2</span> <span class="o">=</span> <span class="mi">0</span>
-    
-    <span class="c1"># YOUR CODE HERE</span>
-    
-    <span class="n">y_pred</span> <span class="o">=</span> <span class="n">ridge</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_encoded</span><span class="p">)</span>   
-
-    <span class="n">test_mae</span> <span class="o">=</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-    <span class="n">test_r2</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
-    
-    <span class="c1"># YOUR CODE ENDS HERE</span>
-    
-    <span class="k">return</span> <span class="n">test_mae</span><span class="p">,</span> <span class="n">test_r2</span>
-</pre></div>
-
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="2-6_test"></a><div class="panel-heading"><span class="nbgrader-label">Grade cell: <code>2-6_test</code></span>
-  <span class="pull-right">
-      Score: 1.0 / 1.0 <a href="#top">(Top)</a>
-  </span></div>
-    <div class="panel-body">
-      <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="n">test_mae</span><span class="p">,</span> <span class="n">test_r2</span> <span class="o">=</span> <span class="n">calculate_score</span><span class="p">(</span><span class="n">ridge</span><span class="p">,</span> <span class="n">X_test_encoded</span><span class="p">,</span> <span class="n">y_test</span><span class="p">)</span>
-<span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="n">_y_pred</span> <span class="o">=</span> <span class="n">ridge</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_encoded</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">test_mae</span> <span class="o">==</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">_y_pred</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">test_r2</span> <span class="o">==</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">_y_pred</span><span class="p">)</span>
-<span class="c1">### END HIDDEN TESTS</span>
-</pre></div>
-
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div><div class="panel panel-primary nbgrader_cell">
-    <a name="challenge_2-6_test"></a><div class="panel-heading"><span class="nbgrader-label">Grade cell: <code>challenge_2-6_test</code></span>
-  <span class="pull-right">
-      Score: 1.0 / 1.0 <a href="#top">(Top)</a>
-  </span></div>
-    <div class="panel-body">
-      <div class="input_area">
-        <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;test MAE:&quot;</span><span class="p">,</span> <span class="n">test_mae</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;test R2:&quot;</span><span class="p">,</span> <span class="n">test_r2</span><span class="p">)</span>
-<span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="n">_y_pred</span> <span class="o">=</span> <span class="n">ridge</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_encoded</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">test_mae</span> <span class="o">==</span> <span class="n">mean_absolute_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">_y_pred</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">test_r2</span> <span class="o">==</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">_y_pred</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">test_r2</span> <span class="o">&gt;</span> <span class="mf">0.75</span>
-<span class="c1">### END HIDDEN TESTS</span>
-</pre></div>
-
-      </div>
-    </div>
-    
-  </div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>test MAE: 24117.610128001397
-test R2: 0.8032992599473767
+<pre>test accuracy:  0.7540106951871658
 </pre>
 </div>
 </div>
